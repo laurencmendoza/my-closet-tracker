@@ -7,7 +7,8 @@ Check out my [Trello Board](https://trello.com/b/1XiujYyJ/my-closet-tracker)!
 ## Wireframes
 
 ## ERD
-![My Closet Tracker ERD](https://github.com/laurencmendoza/my-closet-tracker/assets/137251999/a818ae37-890a-43e7-a4a9-8c275167b363)
+![My Closet Tracker ERD (1)](https://github.com/laurencmendoza/my-closet-tracker/assets/137251999/0622ca46-56e7-41d6-9b60-8c846e19a12f)
+
 
 ## User Stories
 | #  | Name                                   | Description                                                                                                                                                                                              | Priority | Dependent on # |
