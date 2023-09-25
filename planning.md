@@ -5,8 +5,32 @@
 Check out my [Trello Board](https://trello.com/b/1XiujYyJ/my-closet-tracker)!
 
 ## Wireframes
+#### Home Page (logged out view)
+![Wear It Out Wireframes](https://github.com/laurencmendoza/wear-it-out/assets/137251999/27d06a88-fc27-4166-97ee-dba60ac0e6a7)
+#### Home Page & Clothing Items Menu (logged in view)
+![Wear It Out Wireframes (1)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/ac6ac18d-c27f-46f0-a892-9575daae9586)
+#### Clothing Items List View
+![Wear It Out Wireframes (3)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/853c10ac-fd38-4bbb-87b3-288ae0d9fc31)
+#### Clothing Item Details Page
+![Wear It Out Wireframes (4)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/805cebd2-11eb-4302-a852-3bb3755a62ba)
+#### Add a Clothing Item Form
+![Wear It Out Wireframes (5)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/f14f199a-378e-4c3e-9fb5-c93bbc3623bd)
+#### Outfit List View
+![Wear It Out Wireframes (6)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/a7459173-c20f-44c5-bf3e-ba9f06e33b1f)
+#### Create an Outfit Page
+![Wear It Out Wireframes (7)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/312a4cba-4840-4931-89b2-87ba8383c299)
+![Wear It Out Wireframes (8)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/e834c5e4-eb5b-403c-89d4-5c7c27a4c7ac)
+#### Outfit Details Page
+![Wear It Out Wireframes (9)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/a25695c8-54ca-458d-9781-e1f46f318cbd)
+#### Confirm Delete Page
+![Wear It Out Wireframes (10)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/2ea31301-8ca9-4873-ba6f-65016f03e4f5)
+#### Nav Bar Dropdowns (logged in view)
+![Wear It Out Wireframes (2)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/cc60b204-6a61-4d44-b2be-4eca6dd57b2f)
+
+
 
 ## ERD
+
 ![Wear It Out ERD](https://github.com/laurencmendoza/wear-it-out/assets/137251999/b5ac6a72-21f7-40bd-82e9-9485ad3a6e12)
 
 ## User Stories
