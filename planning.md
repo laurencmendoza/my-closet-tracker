@@ -24,9 +24,13 @@ Check out my [Trello Board](https://trello.com/b/1XiujYyJ/my-closet-tracker)!
 ![Wear It Out Wireframes (9)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/a25695c8-54ca-458d-9781-e1f46f318cbd)
 #### Confirm Delete Page
 ![Wear It Out Wireframes (10)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/2ea31301-8ca9-4873-ba6f-65016f03e4f5)
+#### Outfit Tracker Entries List View
+![Wear It Out Wireframes (11)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/1ec25ad6-23e6-496f-9c6c-4162c0400b2b)
+#### Outfit Tracker New Entry Form 
+![Wear It Out Wireframes (12)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/1a7bb696-2d7a-425a-9194-e415d0f982c3)
+![Wear It Out Wireframes (13)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/26b63dbf-f145-4b0f-81ed-2a4228f346ee)
 #### Nav Bar Dropdowns (logged in view)
 ![Wear It Out Wireframes (2)](https://github.com/laurencmendoza/wear-it-out/assets/137251999/cc60b204-6a61-4d44-b2be-4eca6dd57b2f)
-
 
 
 ## ERD
