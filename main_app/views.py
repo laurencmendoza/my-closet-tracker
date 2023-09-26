@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from django.views.generic.edit import CreateView
+from .models import ClothingItem
 # Create your views here.
 
 # Define the home view
@@ -10,8 +11,9 @@ def home(request):
 def clothing_items_index(request):
   return render(request, 'my_closet.html')
 
-def add_clothing_item(request):
-  return render(request, 'add_clothing_item.html')
+class ClothingItemCreate(CreateView):
+  model = ClothingItem
+  fields = '__all__'
 
 def outfits_index(request):
   return render(request, 'outfits.html')

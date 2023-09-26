@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 CATEGORIES = [
@@ -19,3 +20,6 @@ class ClothingItem(models.Model):
 
     def __str__(self):
         return self.description
+    
+    def get_absolute_url(self):
+        return reverse('clothing_item_detail', kwargs={'clothing_item_id': self.id})
