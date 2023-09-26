@@ -12,6 +12,31 @@ def home(request):
 class ClothingItemList(ListView):
   model = ClothingItem
 
+class TopsList(ListView):
+  def get_queryset(self):
+    queryset = ClothingItem.objects.filter(category='T')
+    return queryset
+
+class BottomsList(ListView):
+  def get_queryset(self):
+    queryset = ClothingItem.objects.filter(category='B')
+    return queryset
+
+class FullBodyList(ListView):
+  def get_queryset(self):
+    queryset = ClothingItem.objects.filter(category='F')
+    return queryset
+
+class AccessoriesList(ListView):
+  def get_queryset(self):
+    queryset = ClothingItem.objects.filter(category='A')
+    return queryset
+
+class ShoesList(ListView):
+  def get_queryset(self):
+    queryset = ClothingItem.objects.filter(category='S')
+    return queryset
+  
 class ClothingItemCreate(CreateView):
   model = ClothingItem
   fields = '__all__'
