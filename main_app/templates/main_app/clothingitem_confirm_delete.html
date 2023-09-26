@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delete Clothing Item</h1>
+  <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+    <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{clothingitem.description}}">
+    <div class="px-6 py-4">
+        <div class="font-medium text-md text-darkbrown">{{ clothingitem.description }}</div>
+        <p class="text-brown text-sm pt-2">
+            Category: {{ clothingitem.get_category_display }}
+        </p>
+    </div>
+  </div>
+  <h4>Are you sure you want to delete?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes - Delete!" class="btn">
+    <a href="{% url 'clothing_items_detail' clothingitem.id %}">Cancel</a>
+  </form>
+{% endblock %}

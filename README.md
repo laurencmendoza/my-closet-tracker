@@ -10,6 +10,7 @@
 3. [Tailwind UI](https://tailwindui.com/)
 4. [Tailwind Documentation](https://tailwindcss.com/docs/installation)
 5. [Canva Logos](https://www.canva.com/logos/)
+6. [ColorDesigner.io](https://colordesigner.io/gradient-generator)
 ## Inspiration
 1. [Poshmark](https://poshmark.com/)
 ## Future Features

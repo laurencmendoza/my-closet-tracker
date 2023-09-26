@@ -29,4 +29,4 @@ class ClothingItem(models.Model):
         return self.description
     
     def get_absolute_url(self):
-        return reverse('clothing_item_detail', kwargs={'clothing_item_id': self.id})
+        return reverse('clothing_items_detail', kwargs={'clothingitem_id': self.id})

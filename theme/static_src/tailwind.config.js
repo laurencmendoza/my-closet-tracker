@@ -50,6 +50,9 @@ module.exports = {
                 'orangegray': '#ddcdbc', 
                 'pink': '#eec1d4', 
                 'brownwhite': '#edeae9',
+                'red':'#e5543c', 
+                'blue': '#6d85a8', 
+                'darkred':'#8e3226',
             }
         },
     },

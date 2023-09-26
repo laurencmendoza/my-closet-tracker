@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="my-14 mx-auto max-w-max flex justify-center border-[2px] border-brown rounded-md">
-    <div class="border-brown border-r-[1px] flex place-content-center">
-        <img class="w-full m-6 rounded-sm" src="http://placekitten.com/g/200/300" alt="{{clothingitem.description}}">
+<div class="flex flex-col my-14 mx-auto max-w-max flex justify-center border-[2px] border-brown rounded-md">
+    <div class="flex justify-center">
+        <div class="border-brown border-r-[1px] flex place-content-center">
+            <img class="w-full m-6 rounded-sm" src="http://placekitten.com/g/200/300" alt="{{clothingitem.description}}">
+        </div>
+        <div class="flex flex-col gap-3 p-6 border-brown border-l-[1px] rounded-r-md w-[480px]">
+            <h1 class="text-3xl font-semibold text-darkbrown">{{ clothingitem.description }}</h1>
+            <p class="text-lg text-brown"><span class="font-semibold">Category:</span> {{ clothingitem.get_category_display }}</p>
+            <p class="text-lg text-brown">
+                <span class="font-semibold">Color(s):</span>
+                {% for color in clothingitem.colors.all %}
+                <span class="bg-brownwhite p-2 rounded-sm mx-2">{{ color }}</span>
+                {% endfor %}
+            </p>
+            <p class="text-lg text-brown"><span class="font-semibold">Place purchased</span> {{ clothingitem.place_purchased }}</p>
+            <p class="text-lg text-brown"><span class="font-semibold">Price:</span> {{ clothingitem.price }}</p>
+            <p class="text-lg text-brown"><span class="font-semibold">Size:</span> {{ clothingitem.size }}</p>
+        </div>
     </div>
-    <div class="flex flex-col gap-3 p-6 border-brown border-l-[1px] rounded-r-md w-[480px]">
-        <h1 class="text-3xl font-semibold text-darkbrown">{{ clothingitem.description }}</h1>
-        <p class="text-lg text-brown"><span class="font-semibold">Category:</span> {{ clothingitem.get_category_display }}</p>
-        <p class="text-lg text-brown">
-            <span class="font-semibold">Color(s):</span>
-            {% for color in clothingitem.colors.all %}
-            <span class="bg-brownwhite p-2 rounded-sm mx-2">{{ color }}</span>
-            {% endfor %}
-        </p>
-        <p class="text-lg text-brown"><span class="font-semibold">Place purchased</span> {{ clothingitem.place_purchased }}</p>
-        <p class="text-lg text-brown"><span class="font-semibold">Price:</span> {{ clothingitem.price }}</p>
-        <p class="text-lg text-brown"><span class="font-semibold">Size:</span> {{ clothingitem.size }}</p>
+    <div class="border-t-[2px] border-brown flex justify-evenly h-[80px]">
+        <a href="{% url 'edit_clothing_item' clothingitem.id %}" class="text-center py-2 mt-4 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
+            Edit
+        </a>
+        <a href="{% url 'delete_clothing_item' clothingitem.id %}" class="text-center py-2 mt-4 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
+            <span>Delete</span>
+        </a>
     </div>
 </div>
 

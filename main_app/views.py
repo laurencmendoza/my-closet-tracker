@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import ClothingItem
 # Create your views here.
 
@@ -38,6 +38,15 @@ class ShoesList(ListView):
     return queryset
   
 class ClothingItemCreate(CreateView):
+  model = ClothingItem
+  fields = '__all__'
+  success_url = '/closet'
+
+class ClothingItemEdit(UpdateView):
+  model = ClothingItem
+  fields = '__all__'
+
+class ClothingItemDelete(DeleteView):
   model = ClothingItem
   fields = '__all__'
   success_url = '/closet'
