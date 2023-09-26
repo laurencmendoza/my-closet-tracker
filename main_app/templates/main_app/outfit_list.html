@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+{% for outfit in outfit_list %}
+  <a href="/">
+    <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+        <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{outfit.description}}">
+        <div class="px-6 py-4">
+            <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
+            <!-- <div class="text-brown">
+                <p>Clothing Items:</p>
+                {% for clothingitem in outfit.clothing_items.all %}
+                <p class="bg-brownwhite rounded-sm mx-1">{{ clothingitem}} </p>
+                {% endfor %}
+            </div> -->
+        </div>
+    </div>
+  </a>
+{% endfor %}
+</div>
+
+{% endblock %}

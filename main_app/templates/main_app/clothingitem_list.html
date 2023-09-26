@@ -8,9 +8,12 @@
         <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{clothingitem.description}}">
         <div class="px-6 py-4">
             <div class="font-medium text-md text-darkbrown">{{ clothingitem.description }}</div>
-            <p class="text-brown text-sm pt-2">
-                Category: {{ clothingitem.get_category_display }}
-            </p>
+            <p class="text-brown">
+              <span>Color:</span>
+              {% for color in clothingitem.colors.all %}
+              <span class="bg-brownwhite rounded-sm mx-1">{{ color }}</span>
+              {% endfor %}
+          </p>
         </div>
     </div>
   </a>

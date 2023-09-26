@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import ClothingItem
+from .models import ClothingItem, Outfit
 # Create your views here.
 
 # Define the home view
@@ -55,8 +55,8 @@ def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)
   return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem})
 
-def outfits_index(request):
-  return render(request, 'outfits.html')
+class OutfitList(ListView):
+  model = Outfit
 
 def outfit_tracker(request):
   return render(request, 'outfit_tracker.html')

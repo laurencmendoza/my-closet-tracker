@@ -37,3 +37,10 @@ class ClothingItem(models.Model):
     
     def get_absolute_url(self):
         return reverse('clothing_items_detail', kwargs={'clothingitem_id': self.id})
+
+class Outfit(models.Model):
+    description= models.CharField(max_length=100)
+    clothing_items=models.ManyToManyField(ClothingItem)
+
+    def __str__(self):
+        return self.description
