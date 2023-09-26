@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
-<h1 class="text-5xl">Home</h1>
+<div class="flex">
+    <a href="{% url 'clothing_items_tops' %}">
+        <img src="{% static 'assets/shirt.png' %}">
+    </a>
+    <a href="{% url 'clothing_items_bottoms' %}">
+        <img src="{% static 'assets/pants.png' %}">
+    </a>
+    <a href="{% url 'clothing_items_fullbody' %}">
+        <img src="{% static 'assets/dress.png' %}">
+    </a>
+    <a href="{% url 'clothing_items_accessories' %}">
+        <img src="{% static 'assets/accessories.png' %}">
+    </a>
+    <a href="{% url 'clothing_items_shoes' %}">
+        <img src="{% static 'assets/shoes.png' %}">
+    </a>
+</div>
 {% endblock %}
