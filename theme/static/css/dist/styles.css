@@ -1239,6 +1239,14 @@ select {
   font-weight: 500;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
 .leading-normal {
   line-height: 1.5;
 }

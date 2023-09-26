@@ -43,13 +43,13 @@
                       <div class="hidden lg:ml-6 lg:block">
                         <div class="flex space-x-4 justify-end">
                           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                          <a href="/" class="rounded-md py-3 text-md" aria-current="page">
+                          <a href="{% url 'home' %}" class="rounded-md py-3 text-md" aria-current="page">
                             <img class="h-8 w-auto" src="{% static 'assets/wear_it_out_logo3.png' %}" alt="Wear It Out">
                           </a>
-                          <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">My Closet</a>
-                          <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Add to Closet</a>
-                          <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Outfits</a>
-                          <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Outfit Tracker</a>
+                          <a href="{% url 'clothing_items_index' %}" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">My Closet</a>
+                          <a href="{% url 'add_clothing_item' %}" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Add to Closet</a>
+                          <a href="{% url 'outfits_index' %}" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Outfits</a>
+                          <a href="{% url 'outfit_tracker' %}" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Outfit Tracker</a>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <span class="text-[#2d1d05] px-3 py-4 text-md font-medium">|</span>
                     <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Log In</a> 
                     -->
-                    <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">LOG OUT</a>
+                    <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-semibold">LOG OUT</a>
                 </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@
                     <a href="#" class="text-[white] hover:bg-[#2d1d05] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Add to Closet</a>
                     <a href="#" class="text-[white] hover:bg-[#2d1d05] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Outfits</a>
                     <a href="#" class="text-[white] hover:bg-[#2d1d05] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Outfit Tracker</a>
-                    <a href="#" class="text-[#2d1d05] hover:bg-[white] hover:text-[#2d1d05] block rounded-md px-3 py-2 text-base font-medium">LOG OUT</a>
+                    <a href="#" class="text-[#2d1d05] hover:bg-[white] hover:text-[#2d1d05] block rounded-md px-3 py-2 text-base font-semibold">LOG OUT</a>
                   </div>
                 </div>
               </nav>
