@@ -8,7 +8,7 @@ def home(request):
   return render(request, 'home.html')
 
 def clothing_items_index(request):
-  return render(request, 'closet.html')
+  return render(request, 'my_closet.html')
 
 def add_clothing_item(request):
   return render(request, 'add_clothing_item.html')
