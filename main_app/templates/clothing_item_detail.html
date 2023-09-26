@@ -18,6 +18,12 @@
             <p class="text-lg text-brown"><span class="font-semibold">Place purchased</span> {{ clothingitem.place_purchased }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Price:</span> {{ clothingitem.price }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Size:</span> {{ clothingitem.size }}</p>
+            <p class="text-lg text-brown">
+                <span class="font-semibold">Tag(s):</span>
+                {% for tag in clothingitem.tags.all %}
+                <span class="bg-brownwhite p-2 rounded-sm mx-2">{{ tag }}</span>
+                {% endfor %}
+            </p>
         </div>
     </div>
     <div class="border-t-[2px] border-brown flex justify-evenly h-[80px]">
