@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="grid grid-cols-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 {% for clothingitem in clothingitem_list %}
   <a href="{% url 'clothing_items_detail' clothingitem.id %}">
-    <div class="w-[300px] mx-8 rounded overflow-hidden bg-brownwhite">
-        <img class="w-full" src="http://placekitten.com/g/200/150" alt="Sunset in the mountains">
+    <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+        <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{clothingitem.description}}">
         <div class="px-6 py-4">
-            <div class="font-medium text-lg mb-2 text-darkbrown">{{ clothingitem.description }}</div>
-            <p class="text-brown text-md">
+            <div class="font-medium text-md text-darkbrown">{{ clothingitem.description }}</div>
+            <p class="text-brown text-sm pt-2">
                 Category: {{ clothingitem.get_category_display }}
             </p>
         </div>
