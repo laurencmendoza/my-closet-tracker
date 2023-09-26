@@ -4,19 +4,19 @@
 {% block content %}
 <div class="flex">
     <a href="{% url 'clothing_items_tops' %}">
-        <img src="{% static 'assets/shirt.png' %}">
+        <img title="tops" src="{% static 'assets/shirt.png' %}" alt="t-shirt with brown stripes">
     </a>
     <a href="{% url 'clothing_items_bottoms' %}">
-        <img src="{% static 'assets/pants.png' %}">
+        <img title="bottoms" src="{% static 'assets/pants.png' %}" alt="brown pants">
     </a>
     <a href="{% url 'clothing_items_fullbody' %}">
-        <img src="{% static 'assets/dress.png' %}">
+        <img title="full body" src="{% static 'assets/dress.png' %}" alt="yellow dress">
     </a>
     <a href="{% url 'clothing_items_accessories' %}">
-        <img src="{% static 'assets/accessories.png' %}">
+        <img title="accessories" src="{% static 'assets/accessories.png' %}" alt="sunglasses and bucket hat">
     </a>
     <a href="{% url 'clothing_items_shoes' %}">
-        <img src="{% static 'assets/shoes.png' %}">
+        <img title="shoes" src="{% static 'assets/shoes.png' %}" alt="shoes with brown pattern">
     </a>
 </div>
 {% endblock %}
