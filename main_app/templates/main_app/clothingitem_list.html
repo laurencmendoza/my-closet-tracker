@@ -3,15 +3,17 @@
 
 <div class="grid grid-cols-4">
 {% for clothingitem in clothingitem_list %}
-  <div class="w-[300px] mx-8 rounded overflow-hidden bg-brownwhite">
-    <img class="w-full" src="http://placekitten.com/g/200/150" alt="Sunset in the mountains">
-    <div class="px-6 py-4">
-      <div class="font-medium text-lg mb-2 text-darkbrown">{{ clothingitem.description }}</div>
-      <p class="text-brown text-md">
-        Category: {{ clothingitem.get_category_display }}
-      </p>
+  <a href="{% url 'clothing_items_detail' clothingitem.id %}">
+    <div class="w-[300px] mx-8 rounded overflow-hidden bg-brownwhite">
+        <img class="w-full" src="http://placekitten.com/g/200/150" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+            <div class="font-medium text-lg mb-2 text-darkbrown">{{ clothingitem.description }}</div>
+            <p class="text-brown text-md">
+                Category: {{ clothingitem.get_category_display }}
+            </p>
+        </div>
     </div>
-  </div>
+  </a>
 {% endfor %}
 </div>
 

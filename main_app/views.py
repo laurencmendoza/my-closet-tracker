@@ -17,6 +17,10 @@ class ClothingItemCreate(CreateView):
   fields = '__all__'
   success_url = '/closet'
 
+def clothing_items_detail(request, clothingitem_id):
+  clothingitem = ClothingItem.objects.get(id=clothingitem_id)
+  return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem})
+
 def outfits_index(request):
   return render(request, 'outfits.html')
 

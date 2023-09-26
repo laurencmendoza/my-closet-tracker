@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ clothingitem.description }}</span>
+    <p>Category: {{ clothingitem.get_category_display }}</p>
+    <p>Place purchased: {{ clothingitem.place_purchased }}</p>
+    <p>Price: {{ clothingitem.price }}</p>
+    <p>Size: {{ clothingitem.size }}</p>
+  </div>
+</div>
+
+{% endblock %}
