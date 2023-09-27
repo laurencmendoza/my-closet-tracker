@@ -18,5 +18,6 @@ urlpatterns = [
     path('outfits/', views.OutfitList.as_view(), name='outfits_index'),
     path('outfits/<int:outfit_id>', views.outfit_detail, name='outfits_detail'),
     path('outfits/new', views.OutfitCreate.as_view(), name='add_outfit'),
+    path('outfits/<int:outfit_id>/add_photo/', views.add_outfit_photo, name='add_outfit_photo'),
     path('outfit_tracker/', views.outfit_tracker, name='outfit_tracker'),
 ]

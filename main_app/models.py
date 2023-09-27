@@ -61,3 +61,11 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.url
+
+
+class OutfitPhoto(models.Model):
+    url=models.CharField(max_length=200)
+    outfit = models.ForeignKey(Outfit, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.url

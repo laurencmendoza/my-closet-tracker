@@ -4,8 +4,17 @@
 <div class="flex flex-col my-14 mx-auto max-w-max flex justify-center border-[2px] border-brownwhite">
     <div class="flex justify-center">
         <div class="border-brownwhite border-r-[1px] flex flex-col">
+            {% for photo in outfit.outfitphoto_set.all %}
+            <img class="max-w-[300px] max-h-[400px] m-6" src="{{photo.url}}">
+            {% empty %}
             <img class="max-w-[300px]" src="{% static 'assets/outfit.png' %}" alt="shirt, shorts, shoes, and hat">
             <div class="text-center text-darkbrown text-xl font-bold my-4">No Photos Uploaded</div>
+            {% endfor %}
+            <form action="{% url 'add_outfit_photo' outfit.id %}" enctype="multipart/form-data" method="POST" class="flex flex-col justify-center">
+                {% csrf_token %}
+                <input type="file" name="photo-file" class="mx-auto my-4 w-[240px]">
+                <button type="submit" class="text-center py-2 my-4 mx-auto bg-blue hover:bg-darkblue text-white rounded-md w-[160px]">Upload Photo</button>
+            </form>
         </div>
         <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[700px]">
             <h1 class="text-2xl font-semibold text-darkbrown mb-2">{{ outfit.description }}</h1>
