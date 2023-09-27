@@ -58,5 +58,10 @@ def clothing_items_detail(request, clothingitem_id):
 class OutfitList(ListView):
   model = Outfit
 
+class OutfitCreate(CreateView):
+  model = Outfit
+  fields = '__all__'
+  success_url = '/outfits'
+
 def outfit_tracker(request):
   return render(request, 'outfit_tracker.html')
