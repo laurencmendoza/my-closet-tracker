@@ -3,6 +3,12 @@
 {% load static %}
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+  <div class="m-8 bg-brownwhite w-[300px] h-[280px] rounded">
+    <a href="{% url 'add_outfit' %}">
+      <img class="h-[240px] mx-auto" title="add an outfit" src="{% static 'assets/add_outfit.png' %}" alt="outfit with shirt, jeans, shoes, and jacket and a plus sign"/>
+    </a>
+      <p class="text-center text-md text-darkbrown font-semibold">Add a New Outfit</p>
+  </div>
 {% for outfit in outfit_list %}
 <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
       <a href="/">
@@ -19,12 +25,6 @@
         </div>
     </div>
 {% endfor %}
-<div class="mt-8 bg-brownwhite w-[300px] h-[280px] rounded">
-    <a href="{% url 'add_outfit' %}">
-      <img class="h-[240px] mx-auto" title="add an outfit" src="{% static 'assets/add_outfit.png' %}" alt="outfit with shirt, jeans, shoes, and jacket and a plus sign"/>
-    </a>
-      <p class="text-center text-md text-darkbrown font-semibold">Add a New Outfit</p>
-    </div>
-  </div>
+</div>
 
 {% endblock %}

@@ -10,6 +10,7 @@ urlpatterns = [
     path('closet/accessories', views.AccessoriesList.as_view(), name='clothing_items_accessories'),
     path('closet/shoes', views.ShoesList.as_view(), name='clothing_items_shoes'),
     path('closet/new/', views.ClothingItemCreate.as_view(), name='add_clothing_item'),
+    path('closet/<int:clothingitem_id>/add_photo/', views.add_clothing_item_photo, name='add_clothing_item_photo'),
     path('closet/<int:pk>/edit/', views.ClothingItemEdit.as_view(), name='edit_clothing_item'),
     path('closet/<int:pk>/delete/', views.ClothingItemDelete.as_view(), name='delete_clothing_item'),
     path('closet/<int:clothingitem_id>', views.clothing_items_detail, name='clothing_items_detail'),

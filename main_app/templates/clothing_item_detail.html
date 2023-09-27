@@ -3,8 +3,13 @@
 
 <div class="flex flex-col my-14 mx-auto max-w-max flex justify-center border-[2px] border-brown rounded-md">
     <div class="flex justify-center">
-        <div class="border-brown border-r-[1px] flex place-content-center">
-            <img class="w-full m-6 rounded-sm" src="http://placekitten.com/g/200/300" alt="{{clothingitem.description}}">
+        <div class="border-brown border-r-[1px] flex flex-col place-content-center">
+            <img class="m-6 rounded-sm" src="http://placekitten.com/g/200/300" alt="{{clothingitem.description}}">
+            {% for photo in clothingitem.photo_set.all %}
+            <img class="responsive-img card-panel" src="{{photo.url}}">
+            {% empty %}
+            <div class="text-center text-darkbrown text-lg">No Photos Uploaded</div>
+            {% endfor %}
         </div>
         <div class="flex flex-col gap-3 p-6 border-brown border-l-[1px] rounded-r-md w-[480px]">
             <h1 class="text-3xl font-semibold text-darkbrown">{{ clothingitem.description }}</h1>
