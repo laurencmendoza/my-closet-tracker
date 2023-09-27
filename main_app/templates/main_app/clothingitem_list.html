@@ -3,9 +3,10 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 {% for clothingitem in clothingitem_list %}
-  <a href="{% url 'clothing_items_detail' clothingitem.id %}">
-    <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+<div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+      <a href="{% url 'clothing_items_detail' clothingitem.id %}">
         <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{clothingitem.description}}">
+      </a>
         <div class="px-6 py-4">
             <div class="font-medium text-md text-darkbrown">{{ clothingitem.description }}</div>
             <p class="text-brown">
@@ -16,7 +17,6 @@
           </p>
         </div>
     </div>
-  </a>
 {% endfor %}
 </div>
 
