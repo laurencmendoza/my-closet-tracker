@@ -76,6 +76,10 @@ class OutfitCreate(LoginRequiredMixin, CreateView):
   fields = ['description', 'clothing_items']
   success_url = '/outfits'
 
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
 @login_required
 def outfit_tracker(request):
   return render(request, 'outfit_tracker.html')
