@@ -53,7 +53,8 @@ module.exports = {
                 'red':'#e5543c', 
                 'blue': '#719ac8', 
                 'darkred':'#8e3226',
-                'darkblue': '#235892'
+                'darkblue': '#235892', 
+                'midbrown': '#877b7f'
             }
         },
     },

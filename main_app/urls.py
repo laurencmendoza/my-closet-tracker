@@ -16,6 +16,7 @@ urlpatterns = [
     path('closet/<int:clothingitem_id>', views.clothing_items_detail, name='clothing_items_detail'),
     path('accounts/signup/', views.signup, name='signup'),
     path('outfits/', views.OutfitList.as_view(), name='outfits_index'),
+    path('outfits/<int:outfit_id>', views.outfit_detail, name='outfits_detail'),
     path('outfits/new', views.OutfitCreate.as_view(), name='add_outfit'),
     path('outfit_tracker/', views.outfit_tracker, name='outfit_tracker'),
 ]

@@ -3,27 +3,29 @@
 {% load static %}
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-  <div class="m-8 bg-brownwhite w-[300px] h-[280px] rounded">
+  <div class="m-8 bg-brownwhite w-[300px] h-[280px]">
     <a href="{% url 'add_outfit' %}">
       <img class="h-[240px] mx-auto" title="add an outfit" src="{% static 'assets/add_outfit.png' %}" alt="outfit with shirt, jeans, shoes, and jacket and a plus sign"/>
     </a>
       <p class="text-center text-md text-darkbrown font-semibold">Add a New Outfit</p>
   </div>
 {% for outfit in outfit_list %}
-<div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
-      <a href="/">
-        <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{outfit.description}}">
+<div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
+    <div class="bg-brownwhite">
+      <a href="{% url 'outfits_detail' outfit.id %}">
+        <img class="h-[220px] mx-auto" src="{% static 'assets/outfit.png' %}" alt="{{outfit.description}}">
       </a>
-        <div class="px-6 py-4">
-            <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
-            <!-- <div class="text-brown">
-                <p>Clothing Items:</p>
-                {% for clothingitem in outfit.clothing_items.all %}
-                <p class="bg-brownwhite rounded-sm mx-1">{{ clothingitem}} </p>
-                {% endfor %}
-            </div> -->
-        </div>
     </div>
+  <div class="px-6 py-4">
+      <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
+      <!-- <div class="text-brown">
+          <p>Clothing Items:</p>
+          {% for clothingitem in outfit.clothing_items.all %}
+          <p class="bg-brownwhite rounded-sm mx-1">{{ clothingitem}} </p>
+          {% endfor %}
+      </div> -->
+  </div>
+</div>
 {% endfor %}
 </div>
 

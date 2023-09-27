@@ -84,6 +84,11 @@ class OutfitCreate(LoginRequiredMixin, CreateView):
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
+  
+@login_required
+def outfit_detail(request, outfit_id):
+  outfit = Outfit.objects.get(id=outfit_id)
+  return render(request, 'outfit_detail.html', {'outfit': outfit})
 
 @login_required
 def outfit_tracker(request):
