@@ -27,7 +27,7 @@ class ClothingItem(models.Model):
     description= models.CharField(max_length=100)
     category= models.CharField(max_length=1, choices=CATEGORIES, default=CATEGORIES[0][0])
     colors=models.ManyToManyField(Color)
-    date_acquired= models.DateField(auto_now=True)
+    date_acquired= models.DateField()
     place_purchased= models.CharField(max_length=100)
     price= models.DecimalField(decimal_places=2, max_digits=10)
     size= models.CharField(max_length=4)
