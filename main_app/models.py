@@ -60,4 +60,4 @@ class Photo(models.Model):
     clothingitem = models.ForeignKey(ClothingItem, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'Photo for clothingitem_id: {self.clothingitem_id} @{self.url}'
+        return self.url

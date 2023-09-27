@@ -52,7 +52,6 @@ class ShoesList(LoginRequiredMixin, ListView):
 class ClothingItemCreate(LoginRequiredMixin, CreateView):
   model= ClothingItem
   fields = ['description', 'category', 'colors', 'date_acquired', 'place_purchased', 'price', 'size', 'tags']
-  success_url = '/closet'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -127,4 +126,4 @@ def add_clothing_item_photo(request, clothingitem_id):
       except Exception as e:
           print('An error occurred uploading file to S3')
           print(e)
-  return redirect('detail', clothingitem_id=clothingitem_id)
+  return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
