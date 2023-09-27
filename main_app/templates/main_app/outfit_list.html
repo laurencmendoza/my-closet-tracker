@@ -13,17 +13,15 @@
 <div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
     <div class="bg-brownwhite">
       <a href="{% url 'outfits_detail' outfit.id %}">
+        {% if outfit.outfitphoto_set.all %}
+        <img class="max-h-[220px] mx-auto" src="{{outfit.outfitphoto_set.first.url}}" alt="{{outfit.description}}">
+        {% else %}
         <img class="h-[220px] mx-auto" src="{% static 'assets/outfit.png' %}" alt="{{outfit.description}}">
+        {% endif %}
       </a>
     </div>
   <div class="px-6 py-4">
       <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
-      <!-- <div class="text-brown">
-          <p>Clothing Items:</p>
-          {% for clothingitem in outfit.clothing_items.all %}
-          <p class="bg-brownwhite rounded-sm mx-1">{{ clothingitem}} </p>
-          {% endfor %}
-      </div> -->
   </div>
 </div>
 {% endfor %}

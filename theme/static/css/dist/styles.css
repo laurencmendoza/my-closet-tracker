@@ -944,6 +944,14 @@ select {
   max-height: 400px;
 }
 
+.max-h-\[220px\] {
+  max-height: 220px;
+}
+
+.max-h-\[240px\] {
+  max-height: 240px;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1011,6 +1019,10 @@ select {
 
 .max-w-screen-md {
   max-width: 768px;
+}
+
+.max-w-screen-lg {
+  max-width: 1024px;
 }
 
 .flex-1 {
@@ -1098,6 +1110,10 @@ select {
   border-width: 2px;
 }
 
+.border-\[1px\] {
+  border-width: 1px;
+}
+
 .border-l-\[1px\] {
   border-left-width: 1px;
 }
@@ -1156,6 +1172,10 @@ select {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-2 {
