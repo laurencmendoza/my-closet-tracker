@@ -48,21 +48,31 @@
                           <a href="{% url 'home' %}" class="rounded-md py-3 text-md" aria-current="page">
                             <img class="h-8 w-auto" src="{% static 'assets/wear_it_out_logo3.png' %}" alt="Wear It Out">
                           </a>
+                          {% if user.is_authenticated %}
                           <a href="{% url 'clothing_items_index' %}" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-medium">My Closet</a>
                           <a href="{% url 'add_clothing_item' %}" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-medium">Add to Closet</a>
                           <a href="{% url 'outfits_index' %}" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-medium">Outfits</a>
                           <a href="{% url 'outfit_tracker' %}" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-medium">Outfit Tracker</a>
+                          {% endif %}
                         </div>
                     </div>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="hidden lg:block">
                     <!-- Logged Out View
                     <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Sign Up</a>
                     <span class="text-[#2d1d05] px-3 py-4 text-md font-medium">|</span>
                     <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Log In</a> 
                     -->
-                    <a href="/" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-semibold">LOG OUT</a>
+                    <a href="{% url 'logout' %}" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-semibold">LOG OUT</a>
                 </div>
+                {% else %}
+                <div class="hidden lg:block">
+                  <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Sign Up</a>
+                  <span class="text-[#2d1d05] px-3 py-4 text-md font-medium">|</span>
+                  <a href="{% url 'login' %}" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Log In</a> 
+                </div>
+                {% endif %}
                   </div>
                 </div>
               
@@ -74,7 +84,11 @@
                     <a href="{% url 'add_clothing_item' %}" class="text-white hover:bg-darkbrown hover:text-white block rounded-md px-3 py-2 text-base font-medium">Add to Closet</a>
                     <a href="{% url 'outfits_index' %}" class="text-white hover:bg-darkbrown hover:text-white block rounded-md px-3 py-2 text-base font-medium">Outfits</a>
                     <a href="{% url 'outfit_tracker' %}" class="text-white hover:bg-darkbrown hover:text-white block rounded-md px-3 py-2 text-base font-medium">Outfit Tracker</a>
-                    <a href="#" class="text-darkbrown hover:bg-white hover:text-darkbrown block rounded-md px-3 py-2 text-base font-semibold">LOG OUT</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="text-darkbrown hover:bg-white hover:text-darkbrown block rounded-md px-3 py-2 text-base font-semibold">LOG OUT</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="text-darkbrown hover:bg-white hover:text-darkbrown block rounded-md px-3 py-2 text-base font-semibold">LOG IN</a>
+                    {% endif %}
                   </div>
                 </div>
               </nav>
