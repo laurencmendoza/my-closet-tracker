@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 {% for outfit in outfit_list %}
-  <a href="/">
-    <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+<div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+      <a href="/">
         <img class="w-full" src="http://placekitten.com/g/200/150" alt="{{outfit.description}}">
+      </a>
         <div class="px-6 py-4">
             <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
             <!-- <div class="text-brown">
@@ -16,8 +18,13 @@
             </div> -->
         </div>
     </div>
-  </a>
 {% endfor %}
-</div>
+<div class="mt-8 bg-brownwhite w-[300px] h-[280px] rounded">
+    <a href="{% url 'add_outfit' %}">
+      <img class="h-[240px] mx-auto" title="add an outfit" src="{% static 'assets/add_outfit.png' %}" alt="outfit with shirt, jeans, shoes, and jacket and a plus sign"/>
+    </a>
+      <p class="text-center text-md text-darkbrown font-semibold">Add a New Outfit</p>
+    </div>
+  </div>
 
 {% endblock %}
