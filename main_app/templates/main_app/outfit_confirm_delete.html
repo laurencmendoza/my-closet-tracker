@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="max-w-screen-md mx-auto mt-20 border-brown border-[2px] rounded-md">
+  <h1 class="m-8 text-4xl text-darkbrown">Delete Clothing Item</h1>
+  <div class="w-[300px] m-8 rounded overflow-hidden bg-brownwhite">
+        {% if outfit.outfitphoto_set.all %}
+        <img class="max-h-[220px] mx-auto" src="{{outfit.outfitphoto_set.first.url}}" alt="{{outfit.description}}">
+        {% else %}
+        <img class="h-[220px] mx-auto" src="{% static 'assets/outfit.png' %}" alt="{{outfit.description}}">
+        {% endif %}
+    <div class="px-6 py-4">
+        <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
+    </div>
+  </div>
+  <h4 class="mx-8 my-4 text-darkbrown text-2xl">Are you sure you want to delete?</h4>
+  <form action="" method="POST" class="border-t-[2px] border-brown">
+    {% csrf_token %}
+    <div class="flex justify-center gap-40">
+    <input type="submit" value="Yes, Delete" class="bg-red m-4 hover:bg-darkred text-white w-[120px] h-[40px] rounded-md">
+    <a href="{% url 'outfits_detail' outfit.id %}" class="bg-brown text-center pt-2 mt-4 hover:bg-darkbrown text-white w-[120px] h-[40px] rounded-md">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -79,6 +79,12 @@ class ClothingItemDelete(LoginRequiredMixin, DeleteView):
   success_url = '/closet'
 
 
+class OutfitDelete(LoginRequiredMixin, DeleteView):
+  model = Outfit
+  fields = '__all__'
+  success_url = '/outfits'
+
+
 @login_required
 def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)

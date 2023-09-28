@@ -20,5 +20,6 @@ urlpatterns = [
     path('outfits/new', views.OutfitCreate.as_view(), name='add_outfit'),
     path('outfits/<int:outfit_id>/add_photo/', views.add_outfit_photo, name='add_outfit_photo'),
     path('outfits/<int:pk>/edit/', views.OutfitEdit.as_view(), name='edit_outfit'),
+    path('outfits/<int:pk>/delete/', views.OutfitDelete.as_view(), name='delete_outfit'),
     path('outfit_tracker/', views.outfit_tracker, name='outfit_tracker'),
 ]

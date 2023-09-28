@@ -41,7 +41,7 @@
         <a href="{% url 'edit_outfit' outfit.id %}" class="text-center py-2 mt-4 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
             Edit
         </a>
-        <a href="/" class="text-center py-2 mt-4 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
+        <a href="{% url 'delete_outfit' outfit.id %}" class="text-center py-2 mt-4 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
             <span>Delete</span>
         </a>
     </div>
