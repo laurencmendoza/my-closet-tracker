@@ -65,7 +65,7 @@ class ClothingItemCreate(LoginRequiredMixin, CreateView):
 
 class ClothingItemEdit(LoginRequiredMixin, UpdateView):
   model = ClothingItem
-  fields = ['description', 'category', 'colors', 'date_acquired', 'place_purchased', 'price', 'size', 'tags']
+  fields = ['description', 'category', 'date_acquired', 'place_purchased', 'price', 'size']
 
 
 class OutfitEdit(LoginRequiredMixin, UpdateView):
@@ -119,6 +119,11 @@ def outfit_detail(request, outfit_id):
 @login_required
 def outfit_tracker(request):
   return render(request, 'outfit_tracker.html')
+
+
+def assoc_color(request, clothingitem_id, color_id):
+  ClothingItem.objects.get(id=clothingitem_id).colors.add(color_id)
+  return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
 
 
 def signup(request):

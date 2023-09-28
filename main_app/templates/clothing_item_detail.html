@@ -27,7 +27,7 @@
                 <button type="submit" class="text-center py-2 my-4 mx-auto bg-blue hover:bg-darkblue text-white rounded-md w-[160px]">Upload Photo</button>
             </form>
         </div>
-        <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[480px]">
+        <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[540px]">
             <h1 class="text-3xl font-semibold text-darkbrown mb-8">{{ clothingitem.description }}</h1>
             <p class="text-lg text-brown"><span class="font-semibold">Category:</span> {{ clothingitem.get_category_display }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Place purchased</span> {{ clothingitem.place_purchased }}</p>
@@ -43,26 +43,34 @@
                 <span class="bg-lightyellow p-2 rounded-sm mx-2">No colors added</span>
                 {% endif %}
             </p>
-            <div>
+            <div class="text-darkbrown">
                 <p>Add Colors</p>
                 {% if colors.count %}
                     <div class="grid grid-cols-5">
                         {% for color in colors.all %}
-                        <p>{{color}}</p>
+                        <div>
+                        <span>{{color}}</span>
+                        <form action="{% url 'assoc_color' clothingitem.id color.id%}" method="POST" class="inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">
+                                <img class="h-3" src="{% static 'assets/add.png' %}">
+                            </button>
+                        </form>
+                        </div>
                         {% endfor %}
                     </div>
                 {% endif %}
             </div>
-            <p class="text-lg text-brown">
-                <span class="font-semibold">Tag(s):</span>
+            <p class="font-semibold text-brown text-lg">Tag(s):</p>
+            <div class="text-lg text-brown grid grid-cols-3">
                 {% if clothingitem.tags.all %}
                 {% for tag in clothingitem.tags.all %}
-                <span class="bg-brownwhite p-2 rounded-sm mx-2">{{ tag }}</span>
+                <p class="bg-brownwhite p-2 m-2 rounded-sm mx-2">{{ tag }}</p>
                 {% endfor %}
                 {% else %}
-                <span class="bg-lightyellow p-2 rounded-sm mx-2">No tags added</span>
+                <p class="bg-lightyellow p-2 rounded-sm mx-2">No tags added</p>
                 {% endif %}
-            </p>
+            </div>
         </div>
     </div>
     <div class="border-t-[2px] border-brownwhite flex justify-evenly h-[80px]">

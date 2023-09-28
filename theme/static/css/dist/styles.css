@@ -796,6 +796,10 @@ select {
   margin: 2rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -872,6 +876,10 @@ select {
   display: block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -930,6 +938,18 @@ select {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-3 {
+  height: 0.75rem;
 }
 
 .max-h-\[200px\] {
@@ -1000,6 +1020,10 @@ select {
   width: 100%;
 }
 
+.w-\[540px\] {
+  width: 540px;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1043,6 +1067,10 @@ select {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col {
