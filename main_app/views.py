@@ -17,35 +17,42 @@ def home(request):
   # Include an .html file extension - unlike when rendering EJS templates
   return render(request, 'home.html')
 
+
 class ClothingItemList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = ClothingItem.objects.filter(user=self.request.user)
     return queryset
+
 
 class TopsList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = ClothingItem.objects.filter(category='T', user=self.request.user)
     return queryset
 
+
 class BottomsList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = ClothingItem.objects.filter(category='B', user=self.request.user)
     return queryset
+
 
 class FullBodyList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = ClothingItem.objects.filter(category='F', user=self.request.user)
     return queryset
 
+
 class AccessoriesList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = ClothingItem.objects.filter(category='A', user=self.request.user)
     return queryset
 
+
 class ShoesList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = ClothingItem.objects.filter(category='S', user=self.request.user)
     return queryset
+
 
 class ClothingItemCreate(LoginRequiredMixin, CreateView):
   model= ClothingItem
@@ -55,24 +62,34 @@ class ClothingItemCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+
 class ClothingItemEdit(LoginRequiredMixin, UpdateView):
   model = ClothingItem
   fields = ['description', 'category', 'colors', 'date_acquired', 'place_purchased', 'price', 'size', 'tags']
+
+
+class OutfitEdit(LoginRequiredMixin, UpdateView):
+  model = Outfit
+  fields = ['description']
+
 
 class ClothingItemDelete(LoginRequiredMixin, DeleteView):
   model = ClothingItem
   fields = '__all__'
   success_url = '/closet'
 
+
 @login_required
 def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)
   return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem})
 
+
 class OutfitList(LoginRequiredMixin, ListView):
   def get_queryset(self):
     queryset = Outfit.objects.filter(user=self.request.user)
     return queryset
+
 
 class OutfitCreate(LoginRequiredMixin, CreateView):
   model = Outfit
@@ -82,15 +99,18 @@ class OutfitCreate(LoginRequiredMixin, CreateView):
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
-  
+
+
 @login_required
 def outfit_detail(request, outfit_id):
   outfit = Outfit.objects.get(id=outfit_id)
   return render(request, 'outfit_detail.html', {'outfit': outfit})
 
+
 @login_required
 def outfit_tracker(request):
   return render(request, 'outfit_tracker.html')
+
 
 def signup(request):
   error_message = ''
@@ -111,6 +131,7 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
+
 def add_clothing_item_photo(request, clothingitem_id):
   # photo-file will be the "name" attribute on the <input type="file">
   photo_file = request.FILES.get('photo-file', None)
@@ -130,6 +151,7 @@ def add_clothing_item_photo(request, clothingitem_id):
           print('An error occurred uploading file to S3')
           print(e)
   return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
+
 
 def add_outfit_photo(request, outfit_id):
   # photo-file will be the "name" attribute on the <input type="file">

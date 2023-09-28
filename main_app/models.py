@@ -53,6 +53,9 @@ class Outfit(models.Model):
 
     def __str__(self):
         return self.description
+    
+    def get_absolute_url(self):
+        return reverse('outfits_detail', kwargs={'outfit_id': self.id})
 
 
 class Photo(models.Model):

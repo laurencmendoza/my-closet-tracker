@@ -37,6 +37,14 @@
             </div>
         </div>
     </div>
+    <div class="border-t-[2px] border-brownwhite flex justify-evenly h-[80px]">
+        <a href="{% url 'edit_outfit' outfit.id %}" class="text-center py-2 mt-4 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
+            Edit
+        </a>
+        <a href="/" class="text-center py-2 mt-4 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
+            <span>Delete</span>
+        </a>
+    </div>
 </div>
 <div class="border-brownwhite border-[1px] max-w-screen-lg mx-auto">
     <h1 class="text-3xl text-darkbrown p-4 bg-brownwhite">Clothing Items</h1>
