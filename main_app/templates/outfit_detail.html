@@ -16,12 +16,12 @@
                 <button type="submit" class="text-center py-2 my-4 mx-auto bg-blue hover:bg-darkblue text-white rounded-md w-[160px]">Upload Photo</button>
             </form>
         </div>
-        <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[700px]">
-            <h1 class="text-2xl font-semibold text-darkbrown mb-2">{{ outfit.description }}</h1>
-            <p class="text-lg">Clothing Items:</p>
+        <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[700px] text-darkbrown">
+            <h1 class="text-2xl font-semibold mb-2">{{ outfit.description }}</h1>
+            <p class="text-xl text-brown">Clothing Items:</p>
             <div class="grid grid-cols-3">
             {% for clothingitem in outfit.clothing_items.all %}
-            <div class="border-[2px] border-brownwhite w-[200px]">
+            <div class="border-[2px] border-brownwhite w-[205px] mb-3">
                 {% if clothingitem.photo_set.all %}
                 <div class="bg-brownwhite">
                     <img class="max-w-[200px] max-h-[200px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
@@ -31,7 +31,14 @@
                     <img class="max-w-[200px] bg-brownwhite" src="{% static 'assets/shirt.png' %}" alt="shirt">
                 </div>
                 {% endif %}
-                <p class="text-center rounded-sm my-2 py-1 px-2 max-w-[200px]">{{ clothingitem }} </p>
+                <div class="text-center rounded-sm my-2 py-1 px-2 max-w-[200px]">{{ clothingitem }}
+                    <form action="{% url 'unassoc_clothingitem' outfit.id clothingitem.id %}" method="POST" class="inline ml-2">
+                        {% csrf_token %}
+                        <button type="submit">
+                            <img class="h-3" src="{% static 'assets/remove.png' %}">
+                        </button>
+                    </form>
+                </div>
             </div>
             {% endfor %}
             </div>
@@ -46,11 +53,36 @@
         </a>
     </div>
 </div>
-<div class="border-brownwhite border-[1px] max-w-screen-lg mx-auto">
-    <h1 class="text-3xl text-darkbrown p-4 bg-brownwhite">Clothing Items</h1>
-    <div>
-        list of clothing items
+<div class="border-brownwhite border-[1px] w-[1000px] mx-auto">
+    <h1 class="text-xl text-darkbrown p-4 bg-brownwhite">Add Clothing Items:</h1>
+    {% if clothingitems.count %}
+    <div class="mx-4 px-4 grid grid-cols-4">
+        {% for clothingitem in clothingitems.all%}
+        <div class="border-[2px] border-brownwhite w-[205px] m-4">
+            {% if clothingitem.photo_set.all %}
+            <div class="bg-brownwhite">
+                <img class="max-w-[200px] max-h-[200px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
+            </div>
+            {% else %}
+            <div class="bg-brownwhite">
+                <img class="max-w-[200px] bg-brownwhite" src="{% static 'assets/shirt.png' %}" alt="shirt">
+            </div>
+            {% endif %}
+            <div class="text-center rounded-sm my-2 py-1 px-2 max-w-[200px] text-darkbrown">
+                {{ clothingitem }}
+                <form action="{% url 'assoc_clothingitem' outfit.id clothingitem.id %}" method="POST" class="inline ml-2">
+                    {% csrf_token %}
+                    <button type="submit">
+                        <img class="h-3" src="{% static 'assets/add.png' %}">
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
     </div>
+    {% else %}
+    <p class="px-4">No available clothing items</p>
+    {% endif %}
 </div>
 
 {% endblock %}

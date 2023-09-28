@@ -116,7 +116,10 @@ class OutfitCreate(LoginRequiredMixin, CreateView):
 @login_required
 def outfit_detail(request, outfit_id):
   outfit = Outfit.objects.get(id=outfit_id)
-  return render(request, 'outfit_detail.html', {'outfit': outfit})
+  clothingitem_id_list = outfit.clothing_items.all().values_list('id')
+  userclothingitems = ClothingItem.objects.filter(user=request.user)
+  clothingitems_outfit_doesnt_have = userclothingitems.exclude(id__in=clothingitem_id_list)
+  return render(request, 'outfit_detail.html', {'outfit': outfit, 'clothingitems':clothingitems_outfit_doesnt_have})
 
 
 @login_required
@@ -146,6 +149,17 @@ def assoc_tag(request, clothingitem_id, tag_id):
 def unassoc_tag(request, clothingitem_id, tag_id):
   ClothingItem.objects.get(id=clothingitem_id).tags.remove(tag_id)
   return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
+
+
+@login_required
+def assoc_clothingitem(request, outfit_id, clothingitem_id):
+  Outfit.objects.get(id=outfit_id).clothing_items.add(clothingitem_id)
+  return redirect('outfits_detail', outfit_id=outfit_id)
+
+@login_required
+def unassoc_clothingitem(request, outfit_id, clothingitem_id):
+  Outfit.objects.get(id=outfit_id).clothing_items.remove(clothingitem_id)
+  return redirect('outfits_detail', outfit_id=outfit_id)
 
 
 def signup(request):
