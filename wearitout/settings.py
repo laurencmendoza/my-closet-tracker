@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,10 +143,13 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-STATIC_ROOT = BASE_DIR/ "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Other settings above
 
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+
