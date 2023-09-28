@@ -25,4 +25,5 @@ urlpatterns = [
     path('closet/<int:clothingitem_id>/assoc_color/<int:color_id>/', views.assoc_color, name='assoc_color'),
     path('closet/<int:clothingitem_id>/unassoc_color/<int:color_id>/', views.unassoc_color, name='unassoc_color'),
     path('closet/<int:clothingitem_id>/assoc_tag/<int:tag_id>/', views.assoc_tag, name='assoc_tag'),
+    path('closet/<int:clothingitem_id>/unassoc_tag/<int:tag_id>/', views.unassoc_tag, name='unassoc_tag'),
 ]

@@ -124,18 +124,27 @@ def outfit_tracker(request):
   return render(request, 'outfit_tracker.html')
 
 
+@login_required
 def assoc_color(request, clothingitem_id, color_id):
   ClothingItem.objects.get(id=clothingitem_id).colors.add(color_id)
   return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
 
 
+@login_required
 def unassoc_color(request, clothingitem_id, color_id):
   ClothingItem.objects.get(id=clothingitem_id).colors.remove(color_id)
   return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
 
 
+@login_required
 def assoc_tag(request, clothingitem_id, tag_id):
   ClothingItem.objects.get(id=clothingitem_id).tags.add(tag_id)
+  return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
+
+
+@login_required
+def unassoc_tag(request, clothingitem_id, tag_id):
+  ClothingItem.objects.get(id=clothingitem_id).tags.remove(tag_id)
   return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
 
 

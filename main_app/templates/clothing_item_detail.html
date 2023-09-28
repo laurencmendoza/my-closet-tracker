@@ -71,22 +71,24 @@
                 <p class="px-4">No available colors</p>
                 {% endif %}
             </div>
-            <p class="text-lg text-brown">
+            <div class="text-lg text-brown">
                 <span class="font-semibold text-brown text-lg">Tag(s):</span>
                 {% if clothingitem.tags.all %}
                 {% for tag in clothingitem.tags.all %}
-                    <span class="bg-brownwhite p-2 m-2 rounded-sm mx-2 leading-[3rem]">{{ tag }}</span>
-                    <!-- <form action="{% url 'assoc_tag' clothingitem.id tag.id%}" method="POST" class="inline">
-                        {% csrf_token %}
-                        <button type="submit">
-                            <img class="h-3" src="{% static 'assets/add.png' %}">
-                        </button>
-                    </form> -->
+                    <span class="bg-brownwhite p-2 m-2 rounded-sm mx-2 leading-[3rem]">
+                        {{ tag }}
+                        <form action="{% url 'unassoc_tag' clothingitem.id tag.id%}" method="POST" class="inline">
+                            {% csrf_token %}
+                            <button type="submit">
+                                <img class="h-3" src="{% static 'assets/remove.png' %}">
+                            </button>
+                        </form>
+                    </span>
                 {% endfor %}
                 {% else %}
                 <span class="bg-lightyellow p-2 rounded-sm mx-2">No tags added</span>
                 {% endif %}
-            </p>
+                </div>
             <div class="text-darkbrown flex flex-col">
                 <p class="bg-orangegray p-2 mb-4 rounded-sm mx-2 font-semibold">Add Tags</p>
                 {% if tags.count %}
