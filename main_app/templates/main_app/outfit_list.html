@@ -11,7 +11,7 @@
   </div>
 {% for outfit in outfit_list %}
 <div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
-    <div class="bg-brownwhite">
+    <div class="bg-white">
       <a href="{% url 'outfits_detail' outfit.id %}">
         {% if outfit.outfitphoto_set.all %}
         <img class="max-h-[220px] mx-auto" src="{{outfit.outfitphoto_set.first.url}}" alt="{{outfit.description}}">
@@ -20,7 +20,7 @@
         {% endif %}
       </a>
     </div>
-  <div class="px-6 py-4">
+  <div class="px-6 py-4 bg-brownwhite">
       <div class="font-medium text-md text-darkbrown">{{ outfit.description }}</div>
   </div>
 </div>
