@@ -99,6 +99,12 @@ class DateEdit(LoginRequiredMixin, UpdateView):
   fields = ['date', 'description']
 
 
+class DateDelete(LoginRequiredMixin, DeleteView):
+  model = Date
+  fields = '__all__'
+  success_url = '/outfit_tracker'
+
+
 @login_required
 def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)

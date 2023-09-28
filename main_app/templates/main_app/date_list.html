@@ -3,7 +3,7 @@
 {% load static %}
 
 <div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
-<a href="/">
+<a href="{% url 'new_entry' %}">
 
     New Entry
 </a>
@@ -18,7 +18,7 @@
         <a href="{% url 'edit_entry' date.id %}" class="text-center py-2 m-2 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
             Edit
         </a>
-        <a href="/" class="text-center py-2 m-2 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
+        <a href="{% url 'delete_entry' date.id %}" class="text-center py-2 m-2 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
             <span>Delete</span>
         </a>
     </div>
