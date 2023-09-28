@@ -926,6 +926,22 @@ select {
   margin-bottom: 0.75rem;
 }
 
+.mb-\[\] {
+  margin-bottom: ;
+}
+
+.mb-\[24px\] {
+  margin-bottom: 24px;
+}
+
+.mb-\[254px\] {
+  margin-bottom: 254px;
+}
+
+.mb-\[54px\] {
+  margin-bottom: 54px;
+}
+
 .block {
   display: block;
 }
@@ -1048,6 +1064,18 @@ select {
 
 .min-h-\[290px\] {
   min-height: 290px;
+}
+
+.min-h-\[190px\] {
+  min-height: 190px;
+}
+
+.min-h-\[195px\] {
+  min-height: 195px;
+}
+
+.min-h-\[200px\] {
+  min-height: 200px;
 }
 
 .w-6 {
