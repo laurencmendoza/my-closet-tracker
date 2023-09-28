@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Leaving the action empty makes the form post to the same url used to display it -->
+<form class="m-10" action="" method="POST">
+    <!-- Django requires the following for security purposes -->
+    {% csrf_token %}
+    <table>
+        <!-- Render the inputs inside of <tr>s & <td>s -->
+        {{ form.as_table }}
+    </table>
+    {% if object %}
+    <input type="submit" value="Update" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
+    {% else %}
+    <input type="submit" value="Create Entry" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md">
+    {% endif %}
+</form>
+{% endblock %}

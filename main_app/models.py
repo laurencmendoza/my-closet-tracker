@@ -72,3 +72,13 @@ class OutfitPhoto(models.Model):
 
     def __str__(self):
         return self.url
+
+
+class Date(models.Model):
+    date = models.DateField()
+    description = models.TextField(max_length=1000)
+    outfits = models.ManyToManyField(Outfit)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('outfit_tracker')

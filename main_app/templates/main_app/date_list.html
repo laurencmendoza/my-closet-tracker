@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
+<a href="/">
+
+    New Entry
+</a>
+</div>
+{% for date in date_list %}
+<div class="flex flex-col my-6">
+    <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto">
+        <p class="text-lg font-bold p-4">{{date.date}}</p>
+        <p class="p-4">{{date.description}}</p>
+    </div>
+    <div class="border-[2px] border-t-[0px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto flex justify-evenly">
+        <a href="{% url 'edit_entry' date.id %}" class="text-center py-2 m-2 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
+            Edit
+        </a>
+        <a href="/" class="text-center py-2 m-2 bg-red hover:bg-darkred text-white w-[100px] h-[40px] rounded-md">
+            <span>Delete</span>
+        </a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

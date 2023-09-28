@@ -4,7 +4,7 @@ import os
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import ClothingItem, Outfit, Photo, OutfitPhoto, Color, Tag
+from .models import ClothingItem, Outfit, Photo, OutfitPhoto, Color, Tag, Date
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -85,15 +85,29 @@ class OutfitDelete(LoginRequiredMixin, DeleteView):
   success_url = '/outfits'
 
 
+class DateCreate(LoginRequiredMixin, CreateView):
+  model= Date
+  fields = ['date', 'description']
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
+
+class DateEdit(LoginRequiredMixin, UpdateView):
+  model = Date
+  fields = ['date', 'description']
+
+
 @login_required
 def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)
   color_id_list = clothingitem.colors.all().values_list('id')
   tag_id_list = clothingitem.tags.all().values_list('id')
   usercolors = Color.objects.filter(user=request.user)
-  colors_clothingitem_doesnt_have = usercolors.exclude(id__in=color_id_list)
+  colors_clothingitem_doesnt_have = Color.objects.exclude(id__in=color_id_list)
   usertags = Tag.objects.filter(user=request.user)
-  tags_clothingitem_doesnt_have = usertags.exclude(id__in=tag_id_list)
+  tags_clothingitem_doesnt_have = Tag.objects.exclude(id__in=tag_id_list)
   return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem, 'colors': colors_clothingitem_doesnt_have, 'tags': tags_clothingitem_doesnt_have})
 
 
@@ -122,9 +136,14 @@ def outfit_detail(request, outfit_id):
   return render(request, 'outfit_detail.html', {'outfit': outfit, 'clothingitems':clothingitems_outfit_doesnt_have})
 
 
-@login_required
-def outfit_tracker(request):
-  return render(request, 'outfit_tracker.html')
+# @login_required
+# def outfit_tracker(request):
+#   return render(request, 'outfit_tracker.html')
+
+class OutfitTracker(LoginRequiredMixin, ListView):
+  def get_queryset(self):
+    queryset = Date.objects.filter(user=self.request.user)
+    return queryset
 
 
 @login_required
@@ -155,6 +174,7 @@ def unassoc_tag(request, clothingitem_id, tag_id):
 def assoc_clothingitem(request, outfit_id, clothingitem_id):
   Outfit.objects.get(id=outfit_id).clothing_items.add(clothingitem_id)
   return redirect('outfits_detail', outfit_id=outfit_id)
+
 
 @login_required
 def unassoc_clothingitem(request, outfit_id, clothingitem_id):
