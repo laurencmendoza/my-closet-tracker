@@ -34,8 +34,8 @@ Check out my [Trello Board](https://trello.com/b/1XiujYyJ/my-closet-tracker)!
 
 
 ## ERD
+![Wear It Out ERD](https://github.com/laurencmendoza/wear-it-out/assets/137251999/ecb881b5-9341-4aac-bbaf-bc34db1f91f2)
 
-![Wear It Out ERD](https://github.com/laurencmendoza/wear-it-out/assets/137251999/b5ac6a72-21f7-40bd-82e9-9485ad3a6e12)
 
 ## User Stories
 | #  | Name                                   | Description                                                                                                                                                                                              | Priority | Dependent on # |
