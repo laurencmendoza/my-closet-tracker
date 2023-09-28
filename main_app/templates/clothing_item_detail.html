@@ -43,6 +43,16 @@
                 <span class="bg-lightyellow p-2 rounded-sm mx-2">No colors added</span>
                 {% endif %}
             </p>
+            <div>
+                <p>Add Colors</p>
+                {% if colors.count %}
+                    <div class="grid grid-cols-5">
+                        {% for color in colors.all %}
+                        <p>{{color}}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
             <p class="text-lg text-brown">
                 <span class="font-semibold">Tag(s):</span>
                 {% if clothingitem.tags.all %}

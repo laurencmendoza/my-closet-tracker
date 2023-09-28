@@ -4,7 +4,7 @@ import os
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import ClothingItem, Outfit, Photo, OutfitPhoto
+from .models import ClothingItem, Outfit, Photo, OutfitPhoto, Color, Tag
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -88,7 +88,10 @@ class OutfitDelete(LoginRequiredMixin, DeleteView):
 @login_required
 def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)
-  return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem})
+  id_list = clothingitem.colors.all().values_list('id')
+  usercolors = Color.objects.filter(user=request.user)
+  colors_clothingitem_doesnt_have = usercolors.exclude(id__in=id_list)
+  return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem, 'colors': colors_clothingitem_doesnt_have})
 
 
 class OutfitList(LoginRequiredMixin, ListView):
