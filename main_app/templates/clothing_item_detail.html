@@ -33,42 +33,78 @@
             <p class="text-lg text-brown"><span class="font-semibold">Place purchased</span> {{ clothingitem.place_purchased }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Price:</span> {{ clothingitem.price }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Size:</span> {{ clothingitem.size }}</p>
-            <p class="text-lg text-brown">
+            <div class="text-lg text-brown">
                 <span class="font-semibold">Color(s):</span>
                 {% if clothingitem.colors.all %}
                 {% for color in clothingitem.colors.all %}
-                <span class="bg-brownwhite p-2 rounded-sm mx-2">{{ color }}</span>
+                <span class="bg-brownwhite p-2 rounded-sm mx-2 leading-[3rem]">
+                    {{ color }}
+                    <form action="{% url 'unassoc_color' clothingitem.id color.id%}" method="POST" class="mx-1 inline">
+                        {% csrf_token %}
+                        <button type="submit">
+                            <img class="h-3" src="{% static 'assets/remove.png' %}">
+                        </button>
+                    </form>
+                </span>
                 {% endfor %}
                 {% else %}
                 <span class="bg-lightyellow p-2 rounded-sm mx-2">No colors added</span>
                 {% endif %}
-            </p>
-            <div class="text-darkbrown">
-                <p>Add Colors</p>
+            </div>
+            <div class="text-darkbrown flex flex-col">
+                <p class="bg-orangegray p-2 mb-4 rounded-sm mx-2 font-semibold">Add Colors</p>
                 {% if colors.count %}
-                    <div class="grid grid-cols-5">
+                    <div class="px-4 grid grid-cols-5">
                         {% for color in colors.all %}
                         <div>
-                        <span>{{color}}</span>
+                        <span class="leading-[1.75rem]">{{color}}</span>
                         <form action="{% url 'assoc_color' clothingitem.id color.id%}" method="POST" class="inline">
                             {% csrf_token %}
-                            <button type="submit" class="btn">
+                            <button type="submit">
                                 <img class="h-3" src="{% static 'assets/add.png' %}">
                             </button>
                         </form>
                         </div>
                         {% endfor %}
                     </div>
+                {% else %}
+                <p class="px-4">No available colors</p>
                 {% endif %}
             </div>
-            <p class="font-semibold text-brown text-lg">Tag(s):</p>
-            <div class="text-lg text-brown grid grid-cols-3">
+            <p class="text-lg text-brown">
+                <span class="font-semibold text-brown text-lg">Tag(s):</span>
                 {% if clothingitem.tags.all %}
                 {% for tag in clothingitem.tags.all %}
-                <p class="bg-brownwhite p-2 m-2 rounded-sm mx-2">{{ tag }}</p>
+                    <span class="bg-brownwhite p-2 m-2 rounded-sm mx-2 leading-[3rem]">{{ tag }}</span>
+                    <!-- <form action="{% url 'assoc_tag' clothingitem.id tag.id%}" method="POST" class="inline">
+                        {% csrf_token %}
+                        <button type="submit">
+                            <img class="h-3" src="{% static 'assets/add.png' %}">
+                        </button>
+                    </form> -->
                 {% endfor %}
                 {% else %}
-                <p class="bg-lightyellow p-2 rounded-sm mx-2">No tags added</p>
+                <span class="bg-lightyellow p-2 rounded-sm mx-2">No tags added</span>
+                {% endif %}
+            </p>
+            <div class="text-darkbrown flex flex-col">
+                <p class="bg-orangegray p-2 mb-4 rounded-sm mx-2 font-semibold">Add Tags</p>
+                {% if tags.count %}
+                    <div class="px-4 grid grid-cols-3">
+                        {% for tag in tags.all %}
+                        <div>
+                        <span class="leading-[1.75rem]">{{tag}}</span>
+                        <form action="{% url 'assoc_tag' clothingitem.id tag.id%}" method="POST" class="inline">
+                            {% csrf_token %}
+                            <button type="submit">
+                                <img class="h-3" src="{% static 'assets/add.png' %}">
+                            </button>
+                        </form>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                <p class="px-4">No available tags</p>
                 {% endif %}
             </div>
         </div>

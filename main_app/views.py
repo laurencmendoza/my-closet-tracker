@@ -88,10 +88,13 @@ class OutfitDelete(LoginRequiredMixin, DeleteView):
 @login_required
 def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)
-  id_list = clothingitem.colors.all().values_list('id')
+  color_id_list = clothingitem.colors.all().values_list('id')
+  tag_id_list = clothingitem.tags.all().values_list('id')
   usercolors = Color.objects.filter(user=request.user)
-  colors_clothingitem_doesnt_have = usercolors.exclude(id__in=id_list)
-  return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem, 'colors': colors_clothingitem_doesnt_have})
+  colors_clothingitem_doesnt_have = usercolors.exclude(id__in=color_id_list)
+  usertags = Tag.objects.filter(user=request.user)
+  tags_clothingitem_doesnt_have = usertags.exclude(id__in=tag_id_list)
+  return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem, 'colors': colors_clothingitem_doesnt_have, 'tags': tags_clothingitem_doesnt_have})
 
 
 class OutfitList(LoginRequiredMixin, ListView):
@@ -123,6 +126,16 @@ def outfit_tracker(request):
 
 def assoc_color(request, clothingitem_id, color_id):
   ClothingItem.objects.get(id=clothingitem_id).colors.add(color_id)
+  return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
+
+
+def unassoc_color(request, clothingitem_id, color_id):
+  ClothingItem.objects.get(id=clothingitem_id).colors.remove(color_id)
+  return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
+
+
+def assoc_tag(request, clothingitem_id, tag_id):
+  ClothingItem.objects.get(id=clothingitem_id).tags.add(tag_id)
   return redirect('clothing_items_detail', clothingitem_id=clothingitem_id)
 
 

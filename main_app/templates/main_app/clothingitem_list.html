@@ -5,32 +5,31 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 {% for clothingitem in clothingitem_list %}
 <div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
-      <div class="bg-brownwhite">
-      <a href="{% url 'clothing_items_detail' clothingitem.id %}">
-        {% if clothingitem.photo_set.all %}
-        <img class="max-h-[300px] mx-auto" src="{{clothingitem.photo_set.first.url}}">
-        {% else %}
-        {% if clothingitem.category == 'S' %}
-        <img class="max-h-[300px]" src="{% static 'assets/shoes.png' %}" alt="{{clothingitem.description}}">
-        {% elif clothingitem.category == 'T' %}
-        <img class="max-h-[300px]" src="{% static 'assets/shirt.png' %}" alt="{{clothingitem.description}}">
-        {% elif clothingitem.category == 'B' %}
-        <img class="max-h-[300px]" src="{% static 'assets/pants.png' %}" alt="{{clothingitem.description}}">
-        {% elif clothingitem.category == 'A' %}
-        <img class="max-h-[300px]" src="{% static 'assets/accessories.png' %}" alt="{{clothingitem.description}}">
-        {% elif clothingitem.category == 'F' %}
-        <img class="max-h-[300px]" src="{% static 'assets/dress.png' %}" alt="{{clothingitem.description}}">
-        {% endif %}
-        {% endif %}
-        
-      </a>
-      </div>
+  <a href="{% url 'clothing_items_detail' clothingitem.id %}">
+    <div class="bg-brownwhite min-h-[300px]">
+      {% if clothingitem.photo_set.all %}
+      <img class="max-h-[300px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
+      {% else %}
+      {% if clothingitem.category == 'S' %}
+      <img class="max-h-[300px]" src="{% static 'assets/shoes.png' %}" alt="{{clothingitem.description}}">
+      {% elif clothingitem.category == 'T' %}
+      <img class="max-h-[300px]" src="{% static 'assets/shirt.png' %}" alt="{{clothingitem.description}}">
+      {% elif clothingitem.category == 'B' %}
+      <img class="max-h-[300px]" src="{% static 'assets/pants.png' %}" alt="{{clothingitem.description}}">
+      {% elif clothingitem.category == 'A' %}
+      <img class="max-h-[300px]" src="{% static 'assets/accessories.png' %}" alt="{{clothingitem.description}}">
+      {% elif clothingitem.category == 'F' %}
+      <img class="max-h-[300px]" src="{% static 'assets/dress.png' %}" alt="{{clothingitem.description}}">
+      {% endif %}
+      {% endif %}
+    </div>
+  </a>
         <div class="border-t-[2px] border-brownwhite">
             <div class="font-medium text-md text-darkbrown mt-4 mx-4">{{ clothingitem.description }}</div>
             <p class="text-brown mx-4 mt-2 mb-4">
               <span>Color:</span>
               {% for color in clothingitem.colors.all %}
-              <span class="bg-brownwhite py-1 px-2 rounded-sm mx-1">{{ color }}</span>
+              <span class="bg-brownwhite py-1 px-2 rounded-sm mx-1 leading-[2.5rem]">{{ color }}</span>
               {% endfor %}
           </p>
         </div>
