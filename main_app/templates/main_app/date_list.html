@@ -10,9 +10,11 @@
 </div>
 {% for date in date_list %}
 <div class="flex flex-col my-6">
-    <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto">
-        <p class="text-lg font-bold p-4">{{date.date}}</p>
-        <p class="p-4">{{date.description}}</p>
+    <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto hover:text-midbrown">
+            <a href="{% url 'dates_detail' date.id %}">
+            <p class="text-lg font-bold p-4">{{date.date}}</p>
+            <p class="p-4">{{date.description}}</p>
+            </a>
     </div>
     <div class="border-[2px] border-t-[0px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto flex justify-evenly">
         <a href="{% url 'edit_entry' date.id %}" class="text-center py-2 m-2 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">

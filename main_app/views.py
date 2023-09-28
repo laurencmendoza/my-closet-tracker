@@ -104,6 +104,13 @@ class DateDelete(LoginRequiredMixin, DeleteView):
   fields = '__all__'
   success_url = '/outfit_tracker'
 
+@login_required
+def dates_detail(request, date_id):
+  date = Date.objects.get(id=date_id)
+  outfit_id_list = date.outfits.all().values_list('id')
+  useroutfits = Outfit.objects.filter(user=request.user)
+  outfits_date_doesnt_have = useroutfits.exclude(id__in=outfit_id_list)
+  return render(request, 'date_detail.html', {'date': date, 'outfits':outfits_date_doesnt_have})
 
 @login_required
 def clothing_items_detail(request, clothingitem_id):
@@ -186,6 +193,17 @@ def assoc_clothingitem(request, outfit_id, clothingitem_id):
 def unassoc_clothingitem(request, outfit_id, clothingitem_id):
   Outfit.objects.get(id=outfit_id).clothing_items.remove(clothingitem_id)
   return redirect('outfits_detail', outfit_id=outfit_id)
+
+@login_required
+def assoc_outfit(request, date_id, outfit_id):
+  Date.objects.get(id=date_id).outfits.add(outfit_id)
+  return redirect('dates_detail', date_id=date_id)
+
+
+@login_required
+def unassoc_outfit(request, date_id, outfit_id):
+  Date.objects.get(id=date_id).outfits.remove(outfit_id)
+  return redirect('dates_detail', date_id=date_id)
 
 
 def signup(request):

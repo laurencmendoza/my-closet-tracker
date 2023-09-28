@@ -22,6 +22,7 @@ urlpatterns = [
     path('outfits/<int:pk>/edit/', views.OutfitEdit.as_view(), name='edit_outfit'),
     path('outfits/<int:pk>/delete/', views.OutfitDelete.as_view(), name='delete_outfit'),
     path('outfit_tracker/', views.OutfitTracker.as_view(), name='outfit_tracker'),
+    path('outfit_tracker/<int:date_id>/', views.dates_detail, name='dates_detail'),
     path('outfit_tracker/new_entry/', views.DateCreate.as_view(), name='new_entry'),
     path('outfit_tracker/<int:pk>/edit_entry/', views.DateEdit.as_view(), name='edit_entry'),
     path('outfit_tracker/<int:pk>/delete_entry/', views.DateDelete.as_view(), name='delete_entry'),
@@ -31,4 +32,6 @@ urlpatterns = [
     path('closet/<int:clothingitem_id>/unassoc_tag/<int:tag_id>/', views.unassoc_tag, name='unassoc_tag'),
     path('outfits/<int:outfit_id>/assoc_clothingitem/<int:clothingitem_id>/', views.assoc_clothingitem, name='assoc_clothingitem'),
     path('outfits/<int:outfit_id>/unassoc_clothingitem/<int:clothingitem_id>/', views.unassoc_clothingitem, name='unassoc_clothingitem'),
+    path('outfit_tracker/<int:date_id>/assoc_oufit/<int:outfit_id>/', views.assoc_outfit, name='assoc_outfit'),
+    path('outfit_tracker/<int:date_id>/unassoc_oufit/<int:outfit_id>/', views.unassoc_outfit, name='unassoc_outfit'),
 ]
