@@ -1649,6 +1649,11 @@ select {
   background-color: rgb(237 234 233 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-midbrown:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(135 123 127 / var(--tw-bg-opacity));
+}
+
 .hover\:text-darkbrown:hover {
   --tw-text-opacity: 1;
   color: rgb(45 29 5 / var(--tw-text-opacity));
@@ -1672,6 +1677,30 @@ select {
 .hover\:text-orangegray:hover {
   --tw-text-opacity: 1;
   color: rgb(221 205 188 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(113 154 200 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[blue\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\]:hover {
+  color: ;
+}
+
+.hover\:text-\[orange\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 165 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[purple\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(128 0 128 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {

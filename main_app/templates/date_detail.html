@@ -7,6 +7,7 @@
             <h1 class="text-2xl font-semibold mb-2">{{ date.date }}</h1>
             <p class="text-xl text-brown">{{ date.description }}</p>
             <p class="text-xl text-brown">Outfit(s):</p>
+            {% if date.outfits.all %}
             <div class="grid grid-cols-3">
             {% for outfit in date.outfits.all %}
             <div class="border-[2px] border-brownwhite w-[205px] mb-3">
@@ -30,6 +31,9 @@
             </div>
             {% endfor %}
             </div>
+            {% else %}
+            <p class="bg-brownwhite py-2 px-4 text-brown text-lg">No outfits added</p>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -61,7 +65,7 @@
         {% endfor %}
     </div>
     {% else %}
-    <p class="px-4">No available outfits</p>
+    <p class="px-4 my-6 text-darkbrown text-lg">No available outfits</p>
     {% endif %}
 </div>
 

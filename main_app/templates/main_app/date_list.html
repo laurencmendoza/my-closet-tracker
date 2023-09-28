@@ -3,14 +3,11 @@
 {% load static %}
 
 <div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
-<a href="{% url 'new_entry' %}">
-
-    New Entry
-</a>
+<a href="{% url 'new_entry' %}">New Entry</a>
 </div>
 {% for date in date_list %}
 <div class="flex flex-col my-6">
-    <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto hover:text-midbrown">
+    <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto hover:bg-brownwhite">
             <a href="{% url 'dates_detail' date.id %}">
             <p class="text-lg font-bold p-4">{{date.date}}</p>
             <p class="p-4">{{date.description}}</p>
