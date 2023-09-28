@@ -56,7 +56,7 @@ class ShoesList(LoginRequiredMixin, ListView):
 
 class ClothingItemCreate(LoginRequiredMixin, CreateView):
   model= ClothingItem
-  fields = ['description', 'category', 'colors', 'date_acquired', 'place_purchased', 'price', 'size', 'tags']
+  fields = ['description', 'category', 'date_acquired', 'place_purchased', 'price', 'size']
 
   def form_valid(self, form):
     form.instance.user = self.request.user

@@ -1166,6 +1166,11 @@ select {
   background-color: rgb(229 84 60 / var(--tw-bg-opacity));
 }
 
+.bg-lightyellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 234 / var(--tw-bg-opacity));
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -1317,6 +1322,16 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-brownwhite {
+  --tw-text-opacity: 1;
+  color: rgb(237 234 233 / var(--tw-text-opacity));
+}
+
+.text-midbrown {
+  --tw-text-opacity: 1;
+  color: rgb(135 123 127 / var(--tw-text-opacity));
 }
 
 .hover\:bg-\[\#2d1d05\]:hover {
