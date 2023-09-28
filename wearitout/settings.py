@@ -140,3 +140,9 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# Other settings above
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
