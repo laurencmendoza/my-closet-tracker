@@ -75,7 +75,17 @@
             </div>
             {% else %}
             <div class="bg-brownwhite">
-                <img class="max-w-[200px] bg-brownwhite" src="{% static 'assets/shirt.png' %}" alt="shirt">
+                {% if clothingitem.category == 'S' %}
+                <img class="max-h-[200px]" src="{% static 'assets/shoes.png' %}" alt="shoes">
+                {% elif clothingitem.category == 'T' %}
+                <img class="max-h-[200px]" src="{% static 'assets/shirt.png' %}" alt="shirt">
+                {% elif clothingitem.category == 'B' %}
+                <img class="max-h-[200px]" src="{% static 'assets/pants.png' %}" alt="pants">
+                {% elif clothingitem.category == 'A' %}
+                <img class="max-h-[200px]" src="{% static 'assets/accessories.png' %}" alt="hat and sunglasses">
+                {% elif clothingitem.category == 'F' %}
+                <img class="max-h-[200px]" src="{% static 'assets/dress.png' %}" alt="dress">
+                {% endif %}
             </div>
             {% endif %}
             <div class="text-center rounded-sm my-2 py-1 px-2 max-w-[200px] text-darkbrown">
