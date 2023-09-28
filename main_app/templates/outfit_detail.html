@@ -18,6 +18,12 @@
         </div>
         <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[700px] text-darkbrown">
             <h1 class="text-2xl font-semibold mb-2">{{ outfit.description }}</h1>
+            <!-- <p class="text-xl text-brown">Dates worn:</p>
+            <p class="text-brown">
+                {% for date in dates %}
+                <span class="mr-4">{{date.date}} </span>
+                {% endfor %}
+            </p> -->
             <p class="text-xl text-brown">Clothing Items:</p>
             <div class="grid grid-cols-3">
             {% for clothingitem in outfit.clothing_items.all %}

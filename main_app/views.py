@@ -104,6 +104,7 @@ class DateDelete(LoginRequiredMixin, DeleteView):
   fields = '__all__'
   success_url = '/outfit_tracker'
 
+
 @login_required
 def dates_detail(request, date_id):
   date = Date.objects.get(id=date_id)
@@ -111,6 +112,7 @@ def dates_detail(request, date_id):
   useroutfits = Outfit.objects.filter(user=request.user)
   outfits_date_doesnt_have = useroutfits.exclude(id__in=outfit_id_list)
   return render(request, 'date_detail.html', {'date': date, 'outfits':outfits_date_doesnt_have})
+
 
 @login_required
 def clothing_items_detail(request, clothingitem_id):
@@ -144,14 +146,11 @@ class OutfitCreate(LoginRequiredMixin, CreateView):
 def outfit_detail(request, outfit_id):
   outfit = Outfit.objects.get(id=outfit_id)
   clothingitem_id_list = outfit.clothing_items.all().values_list('id')
+  dates = Date.objects.filter(user=request.user)
   userclothingitems = ClothingItem.objects.filter(user=request.user)
   clothingitems_outfit_doesnt_have = userclothingitems.exclude(id__in=clothingitem_id_list)
-  return render(request, 'outfit_detail.html', {'outfit': outfit, 'clothingitems':clothingitems_outfit_doesnt_have})
+  return render(request, 'outfit_detail.html', {'outfit': outfit, 'clothingitems':clothingitems_outfit_doesnt_have, 'dates':dates})
 
-
-# @login_required
-# def outfit_tracker(request):
-#   return render(request, 'outfit_tracker.html')
 
 class OutfitTracker(LoginRequiredMixin, ListView):
   def get_queryset(self):
@@ -193,6 +192,7 @@ def assoc_clothingitem(request, outfit_id, clothingitem_id):
 def unassoc_clothingitem(request, outfit_id, clothingitem_id):
   Outfit.objects.get(id=outfit_id).clothing_items.remove(clothingitem_id)
   return redirect('outfits_detail', outfit_id=outfit_id)
+
 
 @login_required
 def assoc_outfit(request, date_id, outfit_id):

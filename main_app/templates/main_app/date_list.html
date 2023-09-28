@@ -9,16 +9,16 @@
 {% for date in date_list %}
 <div class="flex mx-auto max-w-max">
     {% if date.outfits.first %}
-    <div class="my-6 border-brownwhite border-[2px] border-r-[0px]">
+    <div class="my-6 border-brownwhite border-[2px] border-r-[0px] w-[200px]">
         {% if date.outfits.first.outfitphoto_set.first %}
-        <img src="{{date.outfits.first.outfitphoto_set.first.url}}" class="h-[200px]">
+        <img src="{{date.outfits.first.outfitphoto_set.first.url}}" class="h-[200px] mx-auto">
         {% else %}
         <img src="{% static 'assets/outfit.png' %}" class="h-[200px]">
         {% endif %}
     </div>
     {% endif %}
     <div class="flex flex-col my-6">
-        <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto hover:bg-brownwhite">
+        <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto hover:bg-brownwhite h-[150px]">
                 <a href="{% url 'dates_detail' date.id %}">
                 <p class="text-lg font-bold p-4">{{date.date}}</p>
                 <p class="p-4">{{date.description}}</p>
