@@ -2,9 +2,11 @@
 {% block content %}
 
 
+<a href="{% url 'new_entry' %}">
 <div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
-<a href="{% url 'new_entry' %}">New Entry</a>
+    New Entry
 </div>
+</a>
 
 {% for date in date_list %}
 <div class="flex mx-auto max-w-max">
