@@ -8,7 +8,9 @@
 
 <form method="POST" action="{% url 'signup' %}" class="m-6">
     {% csrf_token %}
-    {{ form.as_p }}
+    <table class="py-2">
+        {{ form.as_table }}
+    </table>
     <input type="submit" class="bg-brown mt-6 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md" value="Sign Up">
 </form>
 
