@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="flex">
     <a href="{% url 'clothing_items_tops' %}">
         <img title="tops" src="https://i.imgur.com/Vakh24u.png" alt="t-shirt with brown stripes">
@@ -23,4 +24,17 @@
         <h1 class="text-center text-darkbrown font-semibold text-3xl">Shoes</h1>
     </a>
 </div>
+{% else %}
+<div class="w-[80vw] border-[2px] border-brownwhite mx-auto my-6">
+    <h1 class="text-darkbrown text-center text-3xl my-4">Welcome to Wear It Out!</h1>
+    <p class="text-darkbrown text-center text-lg">Wear It Out is an application that allows you to log all of the items in your closet, and track your outfits.</p>
+    <p class="text-darkbrown text-center text-xl my-8">
+        <span class="font-bold">Log in</span> or <span class="font-bold">sign up</span> to get started!
+    </p>
+    <div class="flex flex-col xl:flex-row gap-6">
+        <img class="border-[1px] border-brownwhite w-[70vw] xl:w-[35vw] mx-auto xl:ml-[4vw] mb-10" src="https://i.imgur.com/Ea2dZaM.png" alt="screenshot of wear it out with clothing item detail page">
+        <img class="border-[1px] border-brownwhite w-[70vw] xl:w-[35vw] mx-auto xl:mr-[4vw] mb-10" src="https://i.imgur.com/f1HXIQi.png" alt="screenshot of wear it out with outfit tracker view">
+    </div>
+</div>
+{% endif %}
 {% endblock %}
