@@ -81,4 +81,4 @@ class Date(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return reverse('outfit_tracker')
+        return reverse('dates_detail', kwargs={'date_id': self.id})

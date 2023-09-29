@@ -9,6 +9,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django import forms
 
 # Create your views here.
 
@@ -89,6 +90,11 @@ class DateCreate(LoginRequiredMixin, CreateView):
   model= Date
   fields = ['date', 'description']
 
+  def get_form(self, form_class=None):
+    form = super(DateCreate, self).get_form(form_class)
+    form.fields['description'].widget = forms.TextInput(attrs={'placeholder': 'What did you do today?'})
+    return form
+
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
@@ -135,7 +141,6 @@ class OutfitList(LoginRequiredMixin, ListView):
 class OutfitCreate(LoginRequiredMixin, CreateView):
   model = Outfit
   fields = ['description']
-  success_url = '/outfits'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
