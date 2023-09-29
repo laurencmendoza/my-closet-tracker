@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
+
 <div class="flex flex-col my-14 mx-auto max-w-max flex justify-center border-[2px] border-brownwhite">
     <div class="flex justify-center">
         <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[700px] text-darkbrown">
@@ -17,14 +17,14 @@
                 </div>
                 {% else %}
                 <div class="bg-brownwhite">
-                    <img class="h-[220px] mx-auto" src="{% static 'assets/outfit.png' %}" alt="shirt, shorts, shoes, and a hat">
+                    <img class="h-[220px] mx-auto" src="https://i.imgur.com/92tDKN4.png" alt="shirt, shorts, shoes, and a hat">
                 </div>
                 {% endif %}
                 <div class="text-center rounded-sm my-2 py-1 px-2 max-w-[200px]">{{ outfit }}
                     <form action="{% url 'unassoc_outfit' date.id outfit.id %}" method="POST" class="inline ml-2">
                         {% csrf_token %}
                         <button type="submit">
-                            <img class="h-3" src="{% static 'assets/remove.png' %}">
+                            <img class="h-3" src="https://i.imgur.com/R7bJNnQ.png">
                         </button>
                     </form>
                 </div>
@@ -49,7 +49,7 @@
             </div>
             {% else %}
             <div class="bg-brownwhite">
-                <img class="max-w-[200px] bg-brownwhite" src="{% static 'assets/outfit.png' %}" alt="shirt, shorts, shoes, and a hat">
+                <img class="max-w-[200px] bg-brownwhite" src="https://i.imgur.com/92tDKN4.png" alt="shirt, shorts, shoes, and a hat">
             </div>
             {% endif %}
             <div class="text-center rounded-sm my-2 py-1 px-2 max-w-[200px] text-darkbrown">
@@ -57,7 +57,7 @@
                 <form action="{% url 'assoc_outfit' date.id outfit.id %}" method="POST" class="inline ml-2">
                     {% csrf_token %}
                     <button type="submit">
-                        <img class="h-3" src="{% static 'assets/add.png' %}">
+                        <img class="h-3" src="https://i.imgur.com/bUfapyJ.png">
                     </button>
                 </form>
             </div>

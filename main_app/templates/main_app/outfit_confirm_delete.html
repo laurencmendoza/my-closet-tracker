@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+
 
 {% block content %}
 <div class="max-w-screen-md mx-auto mt-20 border-brown border-[2px] rounded-md">
@@ -9,7 +9,7 @@
       {% if outfit.outfitphoto_set.all %}
       <img class="max-h-[220px] mx-auto" src="{{outfit.outfitphoto_set.first.url}}" alt="{{outfit.description}}">
       {% else %}
-      <img class="h-[220px] mx-auto" src="{% static 'assets/outfit.png' %}" alt="{{outfit.description}}">
+      <img class="h-[220px] mx-auto" src="https://i.imgur.com/92tDKN4.png" alt="{{outfit.description}}">
       {% endif %}
     </div>
     <div class="px-6 py-4 border-t-[2px] border-brownwhite bg-brownwhite">

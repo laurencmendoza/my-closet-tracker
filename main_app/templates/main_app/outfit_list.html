@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
+
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
   <div class="m-8 bg-brownwhite w-[300px] h-[280px]">
     <a href="{% url 'add_outfit' %}">
-      <img class="h-[240px] mx-auto" title="add an outfit" src="{% static 'assets/add_outfit.png' %}" alt="outfit with shirt, jeans, shoes, and jacket and a plus sign"/>
+      <img class="h-[240px] mx-auto" title="add an outfit" src="https://i.imgur.com/FJpX7oV.png" alt="outfit with shirt, jeans, shoes, and jacket and a plus sign"/>
     </a>
       <p class="text-center text-md text-darkbrown font-semibold">Add a New Outfit</p>
   </div>
@@ -16,7 +16,7 @@
         {% if outfit.outfitphoto_set.all %}
         <img class="max-h-[220px] mx-auto" src="{{outfit.outfitphoto_set.first.url}}" alt="{{outfit.description}}">
         {% else %}
-        <img class="h-[220px] mx-auto" src="{% static 'assets/outfit.png' %}" alt="{{outfit.description}}">
+        <img class="h-[220px] mx-auto" src="https://i.imgur.com/92tDKN4.png" alt="{{outfit.description}}">
         {% endif %}
       </a>
     </div>

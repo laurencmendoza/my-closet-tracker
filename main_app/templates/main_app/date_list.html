@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
+
 
 <div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
 <a href="{% url 'new_entry' %}">New Entry</a>
@@ -13,7 +13,7 @@
         {% if date.outfits.first.outfitphoto_set.first %}
         <img src="{{date.outfits.first.outfitphoto_set.first.url}}" class="h-[200px] mx-auto">
         {% else %}
-        <img src="{% static 'assets/outfit.png' %}" class="h-[200px]">
+        <img src="https://i.imgur.com/92tDKN4.png" class="h-[200px]">
         {% endif %}
     </div>
     {% endif %}

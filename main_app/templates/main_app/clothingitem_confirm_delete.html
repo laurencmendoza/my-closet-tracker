@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 <div class="max-w-screen-md mx-auto mt-20 border-brown border-[2px] rounded-md">
@@ -10,15 +9,15 @@
       <img class="max-h-[300px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
     {% else %}
     {% if clothingitem.category == 'S' %}
-    <img class="max-w-[300px]" src="{% static 'assets/shoes.png' %}" alt="shoes">
+    <img class="max-w-[300px]" src="https://i.imgur.com/3ATQc4h.png" alt="shoes">
     {% elif clothingitem.category == 'T' %}
-    <img class="max-w-[300px]" src="{% static 'assets/shirt.png' %}" alt="shirt">
+    <img class="max-w-[300px]" src="https://i.imgur.com/Vakh24u.png" alt="shirt">
     {% elif clothingitem.category == 'B' %}
-    <img class="max-w-[300px]" src="{% static 'assets/pants.png' %}" alt="pants">
+    <img class="max-w-[300px]" src="https://i.imgur.com/rv14CLJ.png" alt="pants">
     {% elif clothingitem.category == 'A' %}
-    <img class="max-w-[300px]" src="{% static 'assets/accessories.png' %}" alt="hat and sunglasses">
+    <img class="max-w-[300px]" src="https://i.imgur.com/gJ2GYvw.png" alt="hat and sunglasses">
     {% elif clothingitem.category == 'F' %}
-    <img class="max-w-[300px]" src="{% static 'assets/dress.png' %}" alt="dress">
+    <img class="max-w-[300px]" src="https://i.imgur.com/dyVvDYS.png" alt="dress">
     {% endif %}
     {% endif %}
   </div>
