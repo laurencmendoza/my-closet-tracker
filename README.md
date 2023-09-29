@@ -1,5 +1,5 @@
 # Wear It Out
-'Wear It Out' is a full-stack, full CRUD application that will allow a user to log all of their clothing items, as well as track their outfits. This will allow users to see how often they wear individual items of clothings, view outfits worn on past days, and save their favorite outfits. 
+'Wear It Out' is a full-stack, full CRUD application that will allow a user to log all of their clothing items, as well as track their outfits. Users can add a clothing item to their virtual closet, and then create outfits from their clothing items. Then, users can create an entry for each day to track their outfits.
 ## Getting Started
 ## Screenshots
 ## Technologies Used
