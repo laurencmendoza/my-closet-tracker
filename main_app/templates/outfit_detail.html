@@ -29,7 +29,7 @@
             {% for clothingitem in outfit.clothing_items.all %}
             <div class="border-[2px] border-brownwhite w-[205px] mb-3">
                 {% if clothingitem.photo_set.all %}
-                <div class="bg-brownwhite min-h-[200px]">
+                <div class="bg-brownwhite min-h-[200px] flex flex-col justify-center">
                     <img class="max-w-[200px] max-h-[200px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
                 </div>
                 {% else %}
@@ -76,7 +76,7 @@
         {% for clothingitem in clothingitems.all%}
         <div class="border-[2px] border-brownwhite w-[205px] m-4">
             {% if clothingitem.photo_set.all %}
-            <div class="bg-brownwhite">
+            <div class="bg-brownwhite flex flex-col justify-center h-[200px]">
                 <img class="max-w-[200px] max-h-[200px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
             </div>
             {% else %}

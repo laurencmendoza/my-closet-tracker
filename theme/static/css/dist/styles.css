@@ -1623,6 +1623,14 @@ select {
   max-width: 80vw;
 }
 
+.max-w-\[\] {
+  max-width: ;
+}
+
+.max-w-\[100px\] {
+  max-width: 100px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
