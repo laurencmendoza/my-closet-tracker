@@ -77,6 +77,15 @@ class ClothingItemEdit(LoginRequiredMixin, UpdateView):
   model = ClothingItem
   fields = ['description', 'category', 'date_acquired', 'place_purchased', 'price', 'size']
 
+  def get_form(self, form_class=None):
+    form = super(ClothingItemEdit, self).get_form(form_class)
+    form.fields['description'].widget = forms.TextInput(attrs={'placeholder': 'Describe the item of clothing. Use key details like the type of item and pattern.', 'size':'70'})
+    form.fields['date_acquired'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    form.fields['place_purchased'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    form.fields['price'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    form.fields['size'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    return form
+
 
 class OutfitEdit(LoginRequiredMixin, UpdateView):
   model = Outfit
