@@ -2,7 +2,7 @@
 
 {% block content %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
-  <form class="m-10" action="" method="POST">
+  <form class="m-10 text-darkbrown" action="" method="POST">
     <!-- Django requires the following for security purposes -->
     {% csrf_token %}
     <table>
@@ -12,7 +12,7 @@
     {% if object %}
     <input type="submit" value="Update" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
     {% else %}
-    <input type="submit" value="Create Outfit" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md">
+    <input type="submit" value="Next" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md">
     {% endif %}
   </form>
 {% endblock %}

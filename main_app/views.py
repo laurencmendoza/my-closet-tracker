@@ -59,6 +59,15 @@ class ClothingItemCreate(LoginRequiredMixin, CreateView):
   model= ClothingItem
   fields = ['description', 'category', 'date_acquired', 'place_purchased', 'price', 'size']
 
+  def get_form(self, form_class=None):
+    form = super(ClothingItemCreate, self).get_form(form_class)
+    form.fields['description'].widget = forms.TextInput(attrs={'placeholder': 'Describe the item of clothing. Use key details like the type of item and pattern.', 'size':'70'})
+    form.fields['date_acquired'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    form.fields['place_purchased'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    form.fields['price'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    form.fields['size'].widget = forms.TextInput(attrs={'placeholder': 'Optional'})
+    return form
+
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
@@ -92,7 +101,7 @@ class DateCreate(LoginRequiredMixin, CreateView):
 
   def get_form(self, form_class=None):
     form = super(DateCreate, self).get_form(form_class)
-    form.fields['description'].widget = forms.TextInput(attrs={'placeholder': 'What did you do today?'})
+    form.fields['description'].widget = forms.Textarea(attrs={'placeholder': 'What did you do today?', 'size':'40'})
     return form
 
   def form_valid(self, form):
@@ -141,6 +150,11 @@ class OutfitList(LoginRequiredMixin, ListView):
 class OutfitCreate(LoginRequiredMixin, CreateView):
   model = Outfit
   fields = ['description']
+
+  def get_form(self, form_class=None):
+    form = super(OutfitCreate, self).get_form(form_class)
+    form.fields['description'].widget = forms.TextInput(attrs={'placeholder': 'Describe the outfit. List items in the outfit or describe the style.', 'size':'60'})
+    return form
 
   def form_valid(self, form):
     form.instance.user = self.request.user
