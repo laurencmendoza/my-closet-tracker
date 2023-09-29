@@ -2,16 +2,16 @@
 {% block content %}
 
 
-<h1 class="text-darkbrown text-5xl m-6">Sign Up</h1>
+<h1 class="text-darkbrown text-4xl m-6 font-bold">Sign Up</h1>
 
 <p class="text-red m-6">{{ error_message }}</p>
 
 <form method="POST" action="{% url 'signup' %}" class="m-6">
     {% csrf_token %}
-    <table class="py-2">
+    <table class="w-[600px]">
         {{ form.as_table }}
     </table>
-    <input type="submit" class="bg-brown mt-6 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md" value="Sign Up">
+    <input type="submit" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[400px] h-[40px] rounded-md" value="Sign Up">
 </form>
 
 {% endblock %}

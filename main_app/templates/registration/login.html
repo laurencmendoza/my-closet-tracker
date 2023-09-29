@@ -1,23 +1,14 @@
-{% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% tailwind_css %}
-    <title>Log In</title>
-</head>
-<body class="m-6">
-    <h1 class="text-darkbrown text-5xl m-6">Log In</h1>
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="text-darkbrown text-4xl text-center m-4 font-bold">Log In</h1>
 
     <!-- Add the login form -->
-    <form method="POST" action="{% url 'login' %}" class="text-darkbrown text-xl">
+    <form method="POST" action="{% url 'login' %}" class="text-darkbrown text-xl w-[400px] mx-auto">
         {% csrf_token %}
-        <table class="text-darkbrown text-xl my-4">
+        <table class="text-darkbrown mx-auto my-4">
             {{form.as_table}}
         </table>
         <input type="hidden" name="next" value="{{ next }}">
-        <button type="submit" class="bg-brown py-1 px-4 text-white rounded hover:bg-darkbrown">Log In</button>
+        <button type="submit" class="bg-brown py-2 px-4 w-[80%] ml-[40px] text-white rounded hover:bg-darkbrown">Log In</button>
     </form>
-</body>
-</html>
+{% endblock %}

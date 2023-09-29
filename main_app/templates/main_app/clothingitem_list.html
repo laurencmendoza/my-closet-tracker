@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% if clothingitem_list %}
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 {% for clothingitem in clothingitem_list %}
 <div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
@@ -23,18 +24,21 @@
       {% endif %}
     </div>
   </a>
-        <div class="border-t-[2px] border-brownwhite">
-            <div class="font-medium text-md text-darkbrown mt-4 mx-4">{{ clothingitem.description }}</div>
-            <p class="text-brown mx-4 mt-2 mb-4">
-              <span>Color:</span>
-              {% for color in clothingitem.colors.all %}
-              <span class="bg-brownwhite py-1 px-2 rounded-sm mx-1 leading-[2.5rem]">{{ color }}</span>
-              {% endfor %}
-          </p>
-        </div>
-    </div>
+  <div class="border-t-[2px] border-brownwhite">
+    <div class="font-medium text-md text-darkbrown mt-4 mx-4">{{ clothingitem.description }}</div>
+    <p class="text-brown mx-4 mt-2 mb-4">
+      <span>Color:</span>
+      {% for color in clothingitem.colors.all %}
+      <span class="bg-brownwhite py-1 px-2 rounded-sm mx-1 leading-[2.5rem]">{{ color }}</span>
+      {% endfor %}
+    </p>
+  </div>
+</div>
 {% endfor %}
 </div>
+{% else %}
+<h1 class="m-4 text-darkbrown text-lg bg-brownwhite py-2 px-4">Nothing here yet! Click <span class="font-bold">Add to Closet</span> to create a new clothing item.</h1>
+{% endif %}
 
 
 {% endblock %}
