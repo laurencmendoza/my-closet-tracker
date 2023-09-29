@@ -9,24 +9,24 @@
 </a>
 
 {% for date in date_list %}
-<div class="flex mx-auto max-w-max">
+<div class="flex mx-auto max-w-max my-6">
     {% if date.outfits.first %}
-    <div class="my-6 border-brownwhite border-[2px] border-r-[0px] w-[200px]">
+    <div class="border-brownwhite border-[2px] border-r-[0px] max-w-[200px] flex flex-col justify-center">
         {% if date.outfits.first.outfitphoto_set.first %}
-        <img src="{{date.outfits.first.outfitphoto_set.first.url}}" class="h-[200px] mx-auto">
+        <img src="{{date.outfits.first.outfitphoto_set.first.url}}" class="mx-auto">
         {% else %}
-        <img src="https://i.imgur.com/92tDKN4.png" class="h-[200px]">
+        <img src="https://i.imgur.com/92tDKN4.png">
         {% endif %}
     </div>
     {% endif %}
-    <div class="flex flex-col my-6">
-        <div class="border-[2px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto hover:bg-brownwhite h-[150px]">
-                <a href="{% url 'dates_detail' date.id %}">
+    <div class="flex flex-col w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto">
+        <a href="{% url 'dates_detail' date.id %}" class="h-full">
+            <div class="border-[2px] border-brownwhite text-brown hover:bg-brownwhite h-full justify-self-stretch">
                 <p class="text-lg font-bold p-4">{{date.date}}</p>
                 <p class="p-4">{{date.description}}</p>
-                </a>
-        </div>
-        <div class="border-[2px] border-t-[0px] border-brownwhite text-brown w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto flex justify-evenly">
+            </div>
+        </a>
+        <div class="border-[2px] border-t-[0px] border-brownwhite text-brown  flex justify-evenly">
             <a href="{% url 'edit_entry' date.id %}" class="text-center py-2 m-2 bg-brown hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
                 Edit
             </a>

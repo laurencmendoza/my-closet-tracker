@@ -5,7 +5,7 @@
 {% for clothingitem in clothingitem_list %}
 <div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
   <a href="{% url 'clothing_items_detail' clothingitem.id %}">
-    <div class="bg-brownwhite min-h-[300px]">
+    <div class="bg-brownwhite min-h-[300px] flex flex-col justify-center">
       {% if clothingitem.photo_set.all %}
       <img class="max-h-[300px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
       {% else %}
