@@ -2,22 +2,24 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<img class="absolute" src="https://i.imgur.com/Y9kEXjf.png">
-<a href="{% url 'clothing_items_tops' %}">
-    <img class="absolute mt-9 ml-4 w-[360px] hover:scale-105" src="https://i.imgur.com/135tIaU.png" alt="shirt" title="Tops">
-</a>
-<a href="{% url 'clothing_items_fullbody' %}">
-    <img class="absolute mt-10 ml-[480px] w-[360px] hover:scale-105" src="https://i.imgur.com/WKWx3ce.png" alt="dress" title="Full Body">
-</a>
-<a href="{% url 'clothing_items_bottoms' %}">
-    <img class="absolute mt-7 ml-[950px] w-[280px] hover:scale-105" src="https://i.imgur.com/Ee6yi65.png" alt="pants" title="Bottoms">
-</a>
-<a href="{% url 'clothing_items_shoes' %}">
-    <img class="absolute mt-[600px] ml-[100px] w-[280px] hover:scale-105" src="https://i.imgur.com/WoASnVt.png" alt="shoes" title="Shoes">
-</a>
-<a href="{% url 'clothing_items_accessories' %}">
-    <img class="absolute mt-[620px] ml-[870px] w-[400px] hover:scale-105" src="https://i.imgur.com/B4HLXn2.png" alt="bucket hat and sunglasses" title="Accessories">
-</a>
+<div class="min-w-[80vw] ml-[10vw]">
+    <img class="absolute max-w-[80vw] min-w-[80vw]" src="https://i.imgur.com/Y9kEXjf.png">
+    <a href="{% url 'clothing_items_tops' %}">
+        <img class="absolute mt-[2%] ml-[5vw] w-[22vw] hover:scale-105" src="https://i.imgur.com/135tIaU.png" alt="shirt" title="Tops">
+    </a>
+    <a href="{% url 'clothing_items_fullbody' %}">
+        <img class="absolute mt-[2.25%] ml-[30vw] w-[20vw] hover:scale-105" src="https://i.imgur.com/WKWx3ce.png" alt="dress" title="Full Body">
+    </a>
+    <a href="{% url 'clothing_items_bottoms' %}">
+        <img class="absolute mt-[1.7%] ml-[55vw] w-[16vw] hover:scale-105" src="https://i.imgur.com/Ee6yi65.png" alt="pants" title="Bottoms">
+    </a>
+    <a href="{% url 'clothing_items_shoes' %}">
+        <img class="absolute mt-[33%] ml-[6vw] w-[20vw] hover:scale-105" src="https://i.imgur.com/WoASnVt.png" alt="shoes" title="Shoes">
+    </a>
+    <a href="{% url 'clothing_items_accessories' %}">
+        <img class="absolute mt-[36%] ml-[50vw] w-[23vw] hover:scale-105" src="https://i.imgur.com/B4HLXn2.png" alt="bucket hat and sunglasses" title="Accessories">
+    </a>
+</div>
 {% else %}
 <div class="w-[80vw] border-[2px] border-brownwhite mx-auto my-6">
     <h1 class="text-darkbrown text-center text-3xl mt-4 mb-8 font-bold">Welcome to Wear It Out!</h1>
