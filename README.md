@@ -1,5 +1,8 @@
 # Wear It Out
-'Wear It Out' is a full-stack, full CRUD application that will allow a user to log all of their clothing items, as well as track their outfits. Users can add a clothing item to their virtual closet, and then create outfits from their clothing items. Then, users can create an entry for each day to track their outfits.
+'Wear It Out' is a full-stack, full CRUD application made with Django that will allow a user to log all of their clothing items, as well as track their outfits. Users can add a clothing item to their virtual closet, and then create outfits from their clothing items. Then, users can create an entry for each day to track their outfits. 
+
+This application was created as a way for users to visualize their closet in a way that their real-life storage may not always allow. Instead of tearing apart their closet to experiment with new combinations of clothing items, this application allows users to plan out outfits and test combinations without the hassle of pulling the item out of storage. Users can keep track of what they wear regularly, and check what they wore in the past to get a better picture of their wardrobe utilization. 
+
 ## Getting Started
 ### [Click here to use the application!](https://wear-it-out-e8cbd3eb7d9e.herokuapp.com/)
 
@@ -107,6 +110,9 @@ Add and remove outfits worn on that day
 8. User can customize the home page menu clothing items (ex: choose a dress or a suit for the icon that leads to the clothing items in the 'Full Body' category)
 9. User can view photos uploaded for clothing items and outfits in a photo carousel on the details page
 10. User can delete photos uploaded for clothing items and outfits
+11. User can favorite clothing items and outfits for easy access while creating a new outfit or new entry, respectively
+12. User can view clothing items and outfits in order of most to least worn
+13. User can view all clothing items that have not been worn (based on whether the clothing item has been used in the outfit, and whether the outfit has been used in an entry in the outfit tracker)
 
 ## Known Issues
 1. Missing mobile responsiveness
