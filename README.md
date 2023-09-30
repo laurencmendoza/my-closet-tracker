@@ -2,6 +2,9 @@
 'Wear It Out' is a full-stack, full CRUD application that will allow a user to log all of their clothing items, as well as track their outfits. Users can add a clothing item to their virtual closet, and then create outfits from their clothing items. Then, users can create an entry for each day to track their outfits.
 ## Getting Started
 ### [Click here to use the application!](https://wear-it-out-e8cbd3eb7d9e.herokuapp.com/)
+
+Check out [my planning docs](https://github.com/laurencmendoza/wear-it-out/blob/main/planning.md) to see the application's user stories, wireframes, and ERD.
+
 ## Screenshots
 #### Home Page (logged out view)
 ![Home page logged out view](https://github.com/laurencmendoza/wear-it-out/assets/137251999/7072e6a1-f8d6-450c-96a7-d2b292c6e403)
@@ -72,6 +75,26 @@ Add and remove outfits worn on that day
 1. [Poshmark](https://poshmark.com/)
 
 ## Current User Flow / Feature List
+1. User signs up for the application or logs in using their username and password
+2. User is unable to view pages such as 'My Closet', 'Outfits' and 'Outfit Tracker', and only has access to their clothing items, outfits, and entries. User is unable to add other users' clothing items to their outfits, and user is unable to access other users' outfis to add to their entries. 
+3. User navigates to the home page to see a menu that allows them to view their clothing items by category by clicking on the image that corresponds to the category (ex: clicking on the shirt sends users to a list of their Tops)
+4. User clicks on 'My Closet' to view all of their clothing items
+5. User clicks 'Add to Closet' to add a new clothing item to the app
+6. User views a detail page for the clothing item and adds/removes colors and tags (ex: casual, activewear, business attire) for the item (also available by clicking on the clothing item in the clothing item list view)
+7. User can upload photos of the clothing item
+8. User can edit the clothing item's information
+9. User can click delete to view a confirm deletion page, and then delete the clothing item
+10. User clicks on 'Outfits' to view a list of all their outfits
+11. User clicks on 'Add a New Outfit' on the 'Outfits' page to create a new outfit, first by writing a description
+12. User views a detail page for the outfit and adds/removes clothing items (also available by clicking on the outfit in the outfit list view)
+13. User can upload photos of the outfit
+14. User can edit the outfit description
+15. User can click delete to view a confirm deletion page, and then delete the outfit
+16. User clicks 'Outfit Tracker' to view a list of all of their created entries
+17. User can click edit to update the description or date for each entry
+18. User can click delete to view a confirm deletion page, and then delete the entry
+19. User clicks on 'New Entry' on the 'Outfit Tracker' page to create a new entry, first by writing the date and a description of the day
+20. User views a detail page for the entry and adds/removes outfits
 
 ## Future Features
 1. User is able to create their own colors and tags for clothing items on the clothing item details page
