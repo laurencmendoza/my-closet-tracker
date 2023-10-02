@@ -34,4 +34,5 @@ urlpatterns = [
     path('outfits/<int:outfit_id>/unassoc_clothingitem/<int:clothingitem_id>/', views.unassoc_clothingitem, name='unassoc_clothingitem'),
     path('outfit_tracker/<int:date_id>/assoc_oufit/<int:outfit_id>/', views.assoc_outfit, name='assoc_outfit'),
     path('outfit_tracker/<int:date_id>/unassoc_oufit/<int:outfit_id>/', views.unassoc_outfit, name='unassoc_outfit'),
+    path('weather/', views.weather, name='weather'),
 ]

@@ -18,6 +18,9 @@ from django import forms
 # Define the home view
 def home(request):
   # Include an .html file extension - unlike when rendering EJS templates
+  return render(request, 'home.html')
+
+def weather(request):
   try:
     if request.method == 'POST':
       key = os.environ['WEATHER_API_KEY']
@@ -28,7 +31,7 @@ def home(request):
       list_of_data =json.loads(source)
       
       data ={
-          'temp':str(list_of_data['days'][0]['temp']),
+          'temp':str(list_of_data['currentConditions']['temp']),
           'zip':zip,
           'description':(list_of_data['days'][0]['description']),
           'tempmax':str(list_of_data['days'][0]['tempmax']),
@@ -36,10 +39,9 @@ def home(request):
       }
     else:
         data ={}
-    return render(request, 'home.html', data)
+    return render(request, 'weather.html', data)
   except: 
     return render(request, '404.html')
-
 
 class ClothingItemList(LoginRequiredMixin, ListView):
   def get_queryset(self):

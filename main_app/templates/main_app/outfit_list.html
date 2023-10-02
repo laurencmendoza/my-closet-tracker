@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+<div class="w-max mx-auto flex mt-6">
+  <a href="{% url 'weather' %}">
+      <img src="https://i.imgur.com/ILp1Fcj.png" alt="smiling sun" class="h-[50px] mt-1 hover:scale-105">
+  </a>
+  <p class="self-center mx-4 text-lg text-brown">What's the weather?</p>
+</div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
   <div class="m-8 bg-brownwhite w-[300px] h-[280px]">
     <a href="{% url 'add_outfit' %}">

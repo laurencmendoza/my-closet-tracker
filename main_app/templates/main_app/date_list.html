@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
 <a href="{% url 'new_entry' %}">
-<div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
-    New Entry
-</div>
+    <div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
+        New Entry
+    </div>
 </a>
 
 {% for date in date_list %}
