@@ -21,7 +21,7 @@ Each item links to a list of clothing items in that category (ex: clicking on th
 ![Add to closet page](https://github.com/laurencmendoza/wear-it-out/assets/137251999/914fd254-c39b-44c8-abab-b9128074abd1)
 
 #### My Closet Page - list of clothing items
-Click on each item to view the clothing item's details, and view the first image uploaded for the clothing item, or a placeholder based on the item's category if no image is uploaded
+Click on each item to view the clothing item's details, and view the first image uploaded for each clothing item (or a placeholder based on the item's category if no image is uploaded)
 
 ![My closet page](https://github.com/laurencmendoza/wear-it-out/assets/137251999/ea656ef6-7e5c-4038-9933-748b04ec000e)
 
@@ -31,12 +31,17 @@ Add and remove colors and tags associated with clothing item, upload photos, edi
 ![Clothing item details page](https://github.com/laurencmendoza/wear-it-out/assets/137251999/67309ad4-6980-4070-9de9-b3898a8a6ff3)
 
 #### Outfits page - list of outfits created
-Click on each item to view the outfit's details, view the image uploaded for the outfit or a placeholder image if no image is uploaded, and click Add a New Outfit to add to the list
+Click on each item to view the outfit's details, view the image uploaded for each outfit (or a placeholder image if no image is uploaded), click the sun icon to check the weather, and click 'Add a New Outfit' to add to the list.
 
-![Outfits list page](https://github.com/laurencmendoza/wear-it-out/assets/137251999/a8a1b92c-d9a3-4a55-a91f-58cf1b0ceed5)
+![Outfit list page](https://github.com/laurencmendoza/wear-it-out/assets/137251999/15e1c96d-0f47-4498-b701-ff8207c2cdb1)
+
+#### Weather - get the weather for your zip code
+![Weather page](https://github.com/laurencmendoza/wear-it-out/assets/137251999/5d31921b-ede3-421c-8bf3-9e26350e5b7c)
+
 
 #### Add a New Outfit page - create a new outfit, starting with the description
-![New outfit form](https://github.com/laurencmendoza/wear-it-out/assets/137251999/16a80334-fc64-4d9e-b669-9604628aed2f)
+![New outfit form](https://github.com/laurencmendoza/wear-it-out/assets/137251999/1bacd568-01be-406a-9f6d-d62280e91281)
+
 
 #### Outfit details page
 Add and remove clothing items associated with the outfit, upload photos, edit or delete
@@ -74,7 +79,8 @@ Add and remove outfits worn on that day
 3. [Tailwind Documentation](https://tailwindcss.com/docs/installation)
 4. [Canva Logos](https://www.canva.com/logos/)
 5. [Visual Crossing Weather API Docs](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)
-6. [ColorDesigner.io](https://colordesigner.io/gradient-generator)
+6. [How to Build a Weather App in Django](https://www.digitalocean.com/community/tutorials/how-to-build-a-weather-app-in-django)
+7. [ColorDesigner.io](https://colordesigner.io/gradient-generator)
 
 
 ## Inspiration
@@ -91,16 +97,17 @@ Add and remove outfits worn on that day
 8. User can edit the clothing item's information
 9. User can click delete to view a confirm deletion page, and then delete the clothing item
 10. User clicks on 'Outfits' to view a list of all their outfits
-11. User clicks on 'Add a New Outfit' on the 'Outfits' page to create a new outfit, first by writing a description
-12. User views a detail page for the outfit and adds/removes clothing items (also available by clicking on the outfit in the outfit list view)
-13. User can upload photos of the outfit
-14. User can edit the outfit description
-15. User can click delete to view a confirm deletion page, and then delete the outfit
-16. User clicks 'Outfit Tracker' to view a list of all of their created entries
-17. User can click edit to update the description or date for each entry
-18. User can click delete to view a confirm deletion page, and then delete the entry
-19. User clicks on 'New Entry' on the 'Outfit Tracker' page to create a new entry, first by writing the date and a description of the day
-20. User views a detail page for the entry and adds/removes outfits
+11. User can click on the sun icon to check the weather for their zip code
+12. User clicks on 'Add a New Outfit' on the 'Outfits' page to create a new outfit, first by writing a description
+13. User views a detail page for the outfit and adds/removes clothing items (also available by clicking on the outfit in the outfit list view)
+14. User can upload photos of the outfit
+15. User can edit the outfit description
+16. User can click delete to view a confirm deletion page, and then delete the outfit
+17. User clicks 'Outfit Tracker' to view a list of all of their created entries
+18. User can click edit to update the description or date for each entry
+19. User can click delete to view a confirm deletion page, and then delete the entry
+20. User clicks on 'New Entry' on the 'Outfit Tracker' page to create a new entry, first by writing the date and a description of the day
+21. User views a detail page for the entry and adds/removes outfits
 
 ## Future Features
 1. User is able to create their own colors and tags for clothing items on the clothing item details page
