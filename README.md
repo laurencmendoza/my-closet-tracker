@@ -66,13 +66,16 @@ Add and remove outfits worn on that day
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind UI](https://tailwindui.com/)
 - [Amazon S3](https://aws.amazon.com/s3/)
+- [Visual Crossing Weather API](https://www.visualcrossing.com/weather-api)
   
 ## Key Resources
 1. [Django Tailwind](https://django-tailwind.readthedocs.io/en/latest/installation.html)
 2. [Tailwind UI Navbar](https://tailwindui.com/components/application-ui/navigation/navbars)
 3. [Tailwind Documentation](https://tailwindcss.com/docs/installation)
 4. [Canva Logos](https://www.canva.com/logos/)
-5. [ColorDesigner.io](https://colordesigner.io/gradient-generator)
+5. [Visual Crossing Weather API Docs](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)
+6. [ColorDesigner.io](https://colordesigner.io/gradient-generator)
+
 
 ## Inspiration
 1. [Poshmark](https://poshmark.com/)
