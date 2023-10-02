@@ -3,8 +3,8 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<div class="min-w-[80vw] ml-[10vw]">
-    <img class="absolute max-w-[80vw] min-w-[80vw]" src="https://i.imgur.com/Y9kEXjf.png">
+<div class="w-[80vw] mx-auto">
+    <img class="absolute w-[80vw]" src="https://i.imgur.com/Y9kEXjf.png" alt="closet rack with two platforms">
     <a href="{% url 'clothing_items_tops' %}">
         <img class="absolute mt-[2%] ml-[5vw] w-[22vw] hover:scale-105" src="https://i.imgur.com/135tIaU.png" alt="shirt" title="Tops">
     </a>

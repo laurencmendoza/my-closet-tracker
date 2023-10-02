@@ -982,6 +982,10 @@ select {
   margin-top: 1.5rem;
 }
 
+.mt-\[2vh\] {
+  margin-top: 2vh;
+}
+
 .block {
   display: block;
 }
