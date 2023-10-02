@@ -1,6 +1,8 @@
 import uuid
 import boto3
 import os
+import urllib.request
+import json
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -16,7 +18,27 @@ from django import forms
 # Define the home view
 def home(request):
   # Include an .html file extension - unlike when rendering EJS templates
-  return render(request, 'home.html')
+  try:
+    if request.method == 'POST':
+      key = os.environ['WEATHER_API_KEY']
+      zip = request.POST['zip']
+      source = urllib.request.urlopen('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+zip+'?unitGroup=us&key='+key+'&contentType=json').read()
+      # convert  json file into python dectionary
+
+      list_of_data =json.loads(source)
+      
+      data ={
+          'temp':str(list_of_data['days'][0]['temp']),
+          'zip':zip,
+          'description':(list_of_data['days'][0]['description']),
+          'tempmax':str(list_of_data['days'][0]['tempmax']),
+          'tempmin':str(list_of_data['days'][0]['tempmin']), 
+      }
+    else:
+        data ={}
+    return render(request, 'home.html', data)
+  except: 
+    return render(request, '404.html')
 
 
 class ClothingItemList(LoginRequiredMixin, ListView):
@@ -294,3 +316,4 @@ def add_outfit_photo(request, outfit_id):
           print('An error occurred uploading file to S3')
           print(e)
   return redirect('outfits_detail', outfit_id=outfit_id)
+
