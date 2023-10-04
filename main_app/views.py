@@ -167,9 +167,7 @@ def clothing_items_detail(request, clothingitem_id):
   clothingitem = ClothingItem.objects.get(id=clothingitem_id)
   color_id_list = clothingitem.colors.all().values_list('id')
   tag_id_list = clothingitem.tags.all().values_list('id')
-  usercolors = Color.objects.filter(user=request.user)
   colors_clothingitem_doesnt_have = Color.objects.exclude(id__in=color_id_list)
-  usertags = Tag.objects.filter(user=request.user)
   tags_clothingitem_doesnt_have = Tag.objects.exclude(id__in=tag_id_list)
   return render(request, 'clothing_item_detail.html', {'clothingitem': clothingitem, 'colors': colors_clothingitem_doesnt_have, 'tags': tags_clothingitem_doesnt_have})
 

@@ -14,7 +14,6 @@ CATEGORIES = [
 
 class Color(models.Model):
     color=models.CharField(max_length=30)
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.color
@@ -22,7 +21,6 @@ class Color(models.Model):
 
 class Tag(models.Model):
     tag=models.CharField(max_length=30)
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.tag
