@@ -16,7 +16,7 @@
                   <div class="relative flex h-16 items-center justify-between">
                     <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
                       <!-- Mobile menu button-->
-                      <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-darkbrown hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                      <button onclick="openMenu()" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-darkbrown hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="absolute -inset-0.5"></span>
                         <span class="sr-only">Open main menu</span>
                         <!--
@@ -57,14 +57,9 @@
                           {% endif %}
                         </div>
                     </div>
-                </div>
+                  </div>
                 {% if user.is_authenticated %}
                 <div class="hidden lg:block">
-                    <!-- Logged Out View
-                    <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Sign Up</a>
-                    <span class="text-[#2d1d05] px-3 py-4 text-md font-medium">|</span>
-                    <a href="/" class="text-white hover:bg-[#2d1d05] hover:text-white rounded-md px-3 py-4 text-md font-medium">Log In</a> 
-                    -->
                     <a href="{% url 'logout' %}" class="text-white hover:bg-darkbrown hover:text-white rounded-md px-3 py-4 text-md font-semibold">LOG OUT</a>
                 </div>
                 {% else %}
@@ -78,7 +73,7 @@
                 </div>
               
                 <!-- Mobile menu, show/hide based on menu state. -->
-                <div class="lg:hidden" id="mobile-menu">
+                <div class="lg:hidden hidden" id="mobile-menu">
                   <div class="space-y-1 px-2 pb-3 pt-2">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     {% if user.is_authenticated %}
@@ -100,4 +95,10 @@
             {% endblock %}
         </main>
     </body>
+    <script>
+      function openMenu() {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      }
+    </script>
 </html>
+
