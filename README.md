@@ -125,6 +125,5 @@ Add and remove outfits worn on that day
 13. User can view all clothing items that have not been worn (based on whether the clothing item has been used in the outfit, and whether the outfit has been used in an entry in the outfit tracker)
 
 ## Known Issues
-1. Missing mobile responsiveness
-2. Navbar menu doesn't toggle open and closed (for smaller screen widths)
+1. Missing mobile responsiveness on form pages
 
