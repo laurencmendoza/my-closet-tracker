@@ -4,13 +4,13 @@
 
 {% if user.is_authenticated %}
 <div class="text-darkbrown">
-    <h1 class="text-center text-2xl my-4">Welcome <span class="font-bold">{{user}}</span>!</h1>
-    <p class="text-center my-4 mx-6">Select an item in the closet to view your clothing items</p>
+    <h1 class="text-center text-2xl lg:text-4xl lg:my-8 my-4">Welcome <span class="font-bold">{{user}}</span>!</h1>
+    <p class="text-center my-4 mx-6 lg:text-2xl">Select an item in the closet to view your clothing items</p>
 </div>
 <div class="w-[80vw] mx-auto">
-    <img class="absolute w-[80vw]" src="https://i.imgur.com/Y9kEXjf.png" alt="closet rack with two platforms">
+    <img class="absolute w-[80vw] xl:w-[1040px]" src="https://i.imgur.com/Y9kEXjf.png" alt="closet rack with two platforms">
     <a href="{% url 'clothing_items_tops' %}">
-        <img class="absolute mt-[2%] ml-[5vw] w-[22vw] hover:scale-105" src="https://i.imgur.com/135tIaU.png" alt="shirt" title="Tops">
+        <img class="absolute mt-[2%] ml-[5vw] w-[22vw] xl:mt-[26px] xl:ml-[54px] xl:w-[280px] hover:scale-105" src="https://i.imgur.com/135tIaU.png" alt="shirt" title="Tops">
     </a>
     <a href="{% url 'clothing_items_fullbody' %}">
         <img class="absolute mt-[2.25%] ml-[30vw] w-[20vw] hover:scale-105" src="https://i.imgur.com/WKWx3ce.png" alt="dress" title="Full Body">
