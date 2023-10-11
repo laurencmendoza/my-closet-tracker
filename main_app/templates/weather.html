@@ -4,7 +4,7 @@
 <div class="text-darkbrown">
     
     <div class="mx-auto">
-        <h1 class="text-center text-lg pt-6 pb-2">Thinking about what to wear today? Check the weather by entering your zip code.</h1>
+        <h1 class="text-center text-lg pt-6 pb-4 px-4">Thinking about what to wear today? Check the weather by entering your zip code.</h1>
         <form method="post" class="text-center">
         {% csrf_token %}
             <input class="text-darkbrown" type="text" name="zip" placeholder="zip code">
@@ -12,7 +12,7 @@
         <form>
     </div>
     {% if zip and temp and tempmax and tempmin and description %}
-    <div class="text-white text-center m-4 border-white border-[2px] bg-blue mx-auto w-[500px]">
+    <div class="text-white text-center border-white border-[2px] bg-blue mx-auto my-6 max-w-[80vw]">
         <h1 class="text-2xl py-2">{{zip}}</h1>
         <h1 class="text-4xl py-2">{{temp}} &deg;F</h1>
         <h1 class="text-lg py-2 px-4">{{description}}</h1>

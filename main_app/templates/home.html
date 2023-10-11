@@ -3,6 +3,10 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+<div class="text-darkbrown">
+    <h1 class="text-center text-2xl my-4">Welcome <span class="font-bold">{{user}}</span>!</h1>
+    <p class="text-center my-4 mx-6">Select an item in the closet to view your clothing items</p>
+</div>
 <div class="w-[80vw] mx-auto">
     <img class="absolute w-[80vw]" src="https://i.imgur.com/Y9kEXjf.png" alt="closet rack with two platforms">
     <a href="{% url 'clothing_items_tops' %}">
