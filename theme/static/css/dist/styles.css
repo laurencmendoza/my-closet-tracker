@@ -1528,6 +1528,22 @@ select {
   padding-bottom: 1rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1732,6 +1748,11 @@ select {
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .sm\:w-max {
+    width: -moz-max-content;
+    width: max-content;
   }
 
   .sm\:grid-cols-2 {

@@ -10,23 +10,23 @@
     {% csrf_token %}
     <div class="flex flex-col w-max">
         <input class="my-1 w-[260px]" type="text" name="username" maxlength="150" required placeholder="Username"/>
-        <p class="text-sm text-brown py-1">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+        <p class="text-sm text-brown py-1 w-[260px] sm:w-max">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
         <input class="my-1 w-[260px]" type="password" name="password1" required placeholder="Password"/>
         <p class="text-sm text-brown py-1">Password Requirements<span class="mx-2 hover:cursor-pointer" onclick="openRequirements()">▼</span></p>
-        <div id="password-requirements" class="mb-2 hidden">
+        <div id="password-requirements" class="mb-2 hidden w-[260px] sm:w-max">
             <p class="text-sm bg-brownwhite text-darkbrown px-2 pt-2">Your password can't be too similar to your other personal information.</p>
-            <p class="text-sm bg-brownwhite text-darkbrown px-2">Your password must contain at least 8 characters.</p>
-            <p class="text-sm bg-brownwhite text-darkbrown px-2">Your password can't be a commonly used password.</p>
-            <p class="text-sm bg-brownwhite text-darkbrown px-2 pb-2">Your password can't be entirely numeric.</p>
+            <p class="text-sm bg-brownwhite text-darkbrown px-2 pt-1">Your password must contain at least 8 characters.</p>
+            <p class="text-sm bg-brownwhite text-darkbrown px-2 pt-1">Your password can't be a commonly used password.</p>
+            <p class="text-sm bg-brownwhite text-darkbrown px-2 pb-2 pt-1">Your password can't be entirely numeric.</p>
         </div>
         <input class="my-1 w-[260px]" type="password" name="password2" required placeholder="Confirm Password"/>
-        <p class="text-sm text-brown py-1">Enter the same password as before, for verification.</p>
+        <p class="text-sm text-brown py-1 w-[260px] sm:w-max">Enter the same password as before, for verification.</p>
     </div>
-    <div class="pb-2 text-darkbrown">
+    <button type="submit" class="bg-brown hover:bg-darkbrown text-white w-[260px] h-[40px] rounded-md">Sign Up</button>
+    <div class="py-2 pl-3 text-darkbrown">
     Already have an account?
     <a href="{% url 'login' %}" class="hover:text-orangegray">Log in</a>
     </div>
-    <button type="submit" class="bg-brown hover:bg-darkbrown text-white w-[400px] h-[40px] rounded-md">Sign Up</button>
 </form>
 
 <script>
