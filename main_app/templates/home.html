@@ -7,7 +7,7 @@
     <h1 class="text-center text-2xl lg:text-4xl lg:my-8 my-4">Welcome <span class="font-bold">{{user}}</span>!</h1>
     <p class="text-center my-4 mx-6 lg:text-2xl">Select an item in the closet to view your clothing items</p>
 </div>
-<div class="w-[80vw] mx-auto xl:flex xl:justify-center">
+<div class="hidden sm:block w-[80vw] mx-auto xl:flex xl:justify-center">
     <img class="absolute w-[80vw] xl:w-[1040px]" src="https://i.imgur.com/Y9kEXjf.png" alt="closet rack with two platforms">
     <a href="{% url 'clothing_items_tops' %}">
         <img class="absolute mt-[2%] ml-[5vw] w-[22vw] xl:mt-[26px] xl:ml-[-440px] xl:w-[280px] hover:scale-105" src="https://i.imgur.com/135tIaU.png" alt="shirt" title="Tops">
@@ -23,6 +23,24 @@
     </a>
     <a href="{% url 'clothing_items_accessories' %}">
         <img class="absolute mt-[36%] ml-[50vw] w-[23vw] xl:mt-[460px] xl:ml-[120px] xl:w-[300px] hover:scale-105" src="https://i.imgur.com/B4HLXn2.png" alt="bucket hat and sunglasses" title="Accessories">
+    </a>
+</div>
+<div class="sm:hidden mt-10">
+    <img class="absolute" src="https://i.imgur.com/uCxKphu.png" alt="closet rack with two platforms">
+    <a href="{% url 'clothing_items_tops' %}">
+        <img class="absolute w-[30vw] ml-[3%] hover:scale-105" src="https://i.imgur.com/7kW4Yfk.png" alt="striped shirt" title="Tops">
+    </a>
+    <a href="{% url 'clothing_items_bottoms' %}">
+        <img class="absolute w-[25vw] ml-[65%] mt-[-0.5%] hover:scale-105" src="https://i.imgur.com/RTxV5Ph.png" alt="brown pants" title="Bottoms">
+    </a>
+    <a href="{% url 'clothing_items_fullbody' %}">
+        <img class="absolute w-[28vw] ml-[34%] hover:scale-105" src="https://i.imgur.com/Rqnl4tx.png" alt="yellow dress" title="Full Body">
+    </a>
+    <a href="{% url 'clothing_items_shoes' %}">
+        <img class="absolute w-[30vw] ml-[7%] mt-[67%] hover:scale-105" src="https://i.imgur.com/pEfi5e4.png" alt="shoes" title="Shoes">
+    </a>
+    <a href="{% url 'clothing_items_accessories' %}">
+        <img class="absolute w-[33vw] ml-[58%] mt-[72%] hover:scale-105" src="https://i.imgur.com/yZ531v0.png" alt="bucket hat and sunglasses" title="Accessories">
     </a>
 </div>
 {% else %}
