@@ -2,24 +2,24 @@
 {% block content %}
 
 {% if clothingitem_list %}
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+<div class="grid mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 {% for clothingitem in clothingitem_list %}
-<div class="w-[300px] m-8 overflow-hidden border-brownwhite border-[2px]">
+<div class="max-w-[280px] sm:w-[280px] m-8 overflow-hidden border-brownwhite border-[2px]">
   <a href="{% url 'clothing_items_detail' clothingitem.id %}">
-    <div class="bg-brownwhite min-h-[300px] flex flex-col justify-center">
+    <div class="bg-brownwhite min-h-[200px] sm:min-h-[280px] flex flex-col justify-center">
       {% if clothingitem.photo_set.all %}
-      <img class="max-h-[300px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
+      <img class="max-h-[200px] sm:max-h-[280px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
       {% else %}
       {% if clothingitem.category == 'S' %}
-      <img class="max-h-[300px]" src="https://i.imgur.com/3ATQc4h.png" alt="{{clothingitem.description}}">
+      <img class="max-h-[200px] sm:max-h-[280px] mx-auto bg-brownwhite" src="https://i.imgur.com/3ATQc4h.png" alt="shoes">
       {% elif clothingitem.category == 'T' %}
-      <img class="max-h-[300px]" src="https://i.imgur.com/Vakh24u.png" alt="{{clothingitem.description}}">
+      <img class="max-h-[200px] sm:max-h-[280px] mx-auto bg-brownwhite" src="https://i.imgur.com/Vakh24u.png" alt="striped t-shirt">
       {% elif clothingitem.category == 'B' %}
-      <img class="max-h-[300px]" src="https://i.imgur.com/rv14CLJ.png" alt="{{clothingitem.description}}">
+      <img class="max-h-[200px] sm:max-h-[280px] mx-auto bg-brownwhite" src="https://i.imgur.com/rv14CLJ.png" alt="brown pants">
       {% elif clothingitem.category == 'A' %}
-      <img class="max-h-[300px]" src="https://i.imgur.com/gJ2GYvw.png" alt="{{clothingitem.description}}">
+      <img class="max-h-[200px] sm:max-h-[280px] mx-auto bg-brownwhite" src="https://i.imgur.com/gJ2GYvw.png" alt="bucket hat and sunglasses">
       {% elif clothingitem.category == 'F' %}
-      <img class="max-h-[300px]" src="https://i.imgur.com/dyVvDYS.png" alt="{{clothingitem.description}}">
+      <img class="max-h-[200px] sm:max-h-[280px] mx-auto bg-brownwhite" src="https://i.imgur.com/dyVvDYS.png" alt="yellow dress">
       {% endif %}
       {% endif %}
     </div>
