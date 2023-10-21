@@ -29,6 +29,7 @@
         <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[540px]">
             <h1 class="text-3xl font-semibold text-darkbrown mb-8">{{ clothingitem.description }}</h1>
             <p class="text-lg text-brown"><span class="font-semibold">Category:</span> {{ clothingitem.get_category_display }}</p>
+            <p class="text-lg text-brown"><span class="font-semibold">Date acquired:</span> {{ clothingitem.date_acquired }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Place purchased:</span> {{ clothingitem.place_purchased }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Price:</span> {{ clothingitem.price }}</p>
             <p class="text-lg text-brown"><span class="font-semibold">Size:</span> {{ clothingitem.size }}</p>

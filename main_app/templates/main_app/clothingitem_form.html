@@ -2,30 +2,45 @@
 
 {% block content %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
-  <form class="m-10 text-darkbrown" action="" method="POST">
+  <form class="my-4 sm:my-10 text-darkbrown w-max mx-auto" action="" method="POST">
     <!-- Django requires the following for security purposes -->
     {% csrf_token %}
     <!-- <table>
       {{ form.as_table }}
     </table> -->
     <div class="flex flex-col">
-      <div class="bg-brownwhite text-darkbrown h-[42px] py-2 pl-4 font-medium w-[280px] sm:w-[540px] mb-2">Description: </div>
-      <input class="w-[280px] sm:w-[540px] mb-2" required type="text" placeholder="Describe the item of clothing." name="description">
-      <div class="flex gap-2">
-        <div class="bg-brownwhite text-darkbrown font-medium h-[42px] py-2 pl-4 w-[136px]">Category: </div>
-        <select name="category" class="w-[136px] sm:w-[392px]">
+      <div class="bg-brownwhite text-darkbrown h-[42px] py-2 pl-4 font-medium w-[90vw] sm:w-[650px]">Description: </div>
+      <!-- <input class="w-[90vw] sm:w-[650px] my-2" required type="text" placeholder="Describe the item of clothing." name="description"> -->
+      <textarea required name="description" class="w-[90vw] sm:w-[650px] mb-2 sm:my-2 h-[100px] sm:h-auto" placeholder="Describe the item of clothing. Use key details like the type of item and pattern."></textarea>
+      <div class="sm:flex my-2">
+        <div class="bg-brownwhite text-darkbrown font-medium h-[42px] py-2 pl-4 w-[90vw] sm:w-[164px]">Category: </div>
+        <select name="category" class="sm:mr-4 w-[90vw] sm:w-[153px] mb-2 sm:mb-0">
           <option value="T">Tops</option>
           <option value="B">Bottoms</option>
           <option value="F">Full Body</option>
           <option value="S">Shoes</option>
           <option value="A">Accessories</option>
         </select>
+        <div class="bg-brownwhite text-darkbrown font-medium h-[42px] py-2 pl-4 w-[90vw] sm:w-[164px] mt-2 sm:mt-0">Date acquired: </div>
+        <input type="date" placeholder="optional" name="date_acquired" class="w-[90vw] sm:w-[153px]">
+      </div>
+      <div class="sm:flex my-2">
+        <div class="bg-brownwhite text-darkbrown font-medium h-[42px] py-2 pl-4 w-[90vw] sm:w-[164px]">Place purchased: </div>
+        <input class="w-[90vw] sm:w-[486px]" type="text" placeholder="optional" name="place_purchased">
+      </div>
+      <div class="sm:flex my-2">
+        <div class="bg-brownwhite text-darkbrown font-medium h-[42px] py-2 pl-4 w-[90vw] sm:w-[164px]">Price: </div>
+        <input type="text" placeholder="optional" name="place_purchased" class="w-[90vw] sm:w-[153px] sm:mr-4 mb-4 sm:mb-0">
+        <div class="bg-brownwhite text-darkbrown font-medium h-[42px] py-2 pl-4 w-[90vw] sm:w-[164px]">Size: </div>
+        <input type="text" placeholder="optional" name="place_purchased" class="w-[90vw] sm:w-[153px]">
       </div>
     </div>
     {% if object %}
-    <input type="submit" value="Update" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
+    <input type="submit" value="Update" class="bg-brown mt-4 sm:mt-10 hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md hover:cursor-pointer">
     {% else %}
-    <input type="submit" value="Add to Closet" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md">
+    <div class="flex justify-center">
+      <input type="submit" value="Add to Closet" class="bg-brown mt-4 sm:mt-10 hover:bg-darkbrown text-white w-[200px] h-[40px] hover:cursor-pointer">
+    </div>
     {% endif %}
   </form>
 {% endblock %}
