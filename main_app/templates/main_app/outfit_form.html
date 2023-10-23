@@ -2,17 +2,15 @@
 
 {% block content %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
-  <form class="m-10 text-darkbrown" action="" method="POST">
+  <form class="my-10 text-darkbrown w-max mx-auto" action="" method="POST">
     <!-- Django requires the following for security purposes -->
     {% csrf_token %}
-    <table>
-      <!-- Render the inputs inside of <tr>s & <td>s -->
-      {{ form }}
-    </table>
+    <div class="bg-brownwhite text-darkbrown h-[42px] py-2 pl-4 font-medium w-[90vw] sm:w-[650px]">Description</div>
+    <textarea class="w-[90vw] sm:w-[650px]" required value="description" placeholder="Describe the outfit. List items in the outfit or describe the style."></textarea>
     {% if object %}
-    <input type="submit" value="Update" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
+    <input type="submit" value="Update" class="block bg-brown mt-6 hover:bg-darkbrown text-white w-[100px] h-[40px] rounded-md">
     {% else %}
-    <input type="submit" value="Next" class="bg-brown mt-10 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md">
+    <input type="submit" value="Next" class="block bg-brown mt-6 hover:bg-darkbrown text-white w-[140px] h-[40px] rounded-md">
     {% endif %}
   </form>
 {% endblock %}

@@ -860,6 +860,11 @@ select {
   margin-bottom: 2rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1219,6 +1224,10 @@ select {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[280px\] {
+  width: 280px;
 }
 
 .max-w-7xl {
@@ -1787,6 +1796,10 @@ select {
   .sm\:w-max {
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .sm\:w-\[\] {
+    width: ;
   }
 
   .sm\:grid-cols-2 {
