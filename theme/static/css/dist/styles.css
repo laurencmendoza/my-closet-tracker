@@ -1388,6 +1388,10 @@ select {
   border-top-width: 2px;
 }
 
+.border-b-\[0px\] {
+  border-bottom-width: 0px;
+}
+
 .border-brown {
   --tw-border-opacity: 1;
   border-color: rgb(103 89 94 / var(--tw-border-opacity));
@@ -1802,8 +1806,32 @@ select {
     width: ;
   }
 
+  .sm\:w-\[50vw\] {
+    width: 50vw;
+  }
+
+  .sm\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .sm\:max-w-\[200px\] {
+    max-width: 200px;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+
+  .sm\:border-r-\[0px\] {
+    border-right-width: 0px;
+  }
+
+  .sm\:border-b-\[2px\] {
+    border-bottom-width: 2px;
   }
 
   .sm\:text-3xl {

@@ -2,15 +2,15 @@
 {% block content %}
 
 <a href="{% url 'new_entry' %}">
-    <div class="my-8 w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
+    <div class="my-8 w-[75vw] sm:w-[300px] mx-auto bg-blue hover:bg-darkblue text-white py-2 text-center rounded">
         New Entry
     </div>
 </a>
 
 {% for date in date_list %}
-<div class="flex mx-auto max-w-max my-6">
+<div class="sm:flex mx-auto max-w-max my-6">
     {% if date.outfits.first %}
-    <div class="border-brownwhite border-[2px] border-r-[0px] max-w-[200px] flex flex-col justify-center">
+    <div class="border-brownwhite border-[2px] border-b-[0px] sm:border-b-[2px] sm:border-r-[0px] sm:max-w-[200px] w-[75vw] flex flex-col justify-center">
         {% if date.outfits.first.outfitphoto_set.first %}
         <img src="{{date.outfits.first.outfitphoto_set.first.url}}" class="mx-auto">
         {% else %}
@@ -18,7 +18,7 @@
         {% endif %}
     </div>
     {% endif %}
-    <div class="flex flex-col w-[75vw] md:w-[50vw] 2xl:w-[33vw] mx-auto">
+    <div class="flex flex-col w-[75vw] sm:w-[50vw] 2xl:w-[33vw] mx-auto">
         <a href="{% url 'dates_detail' date.id %}" class="h-full">
             <div class="border-[2px] border-brownwhite text-brown hover:bg-brownwhite h-full justify-self-stretch">
                 <p class="text-lg font-bold p-4">{{date.date}}</p>
