@@ -204,7 +204,7 @@ def outfit_detail(request, outfit_id):
 
 class OutfitTracker(LoginRequiredMixin, ListView):
   def get_queryset(self):
-    queryset = Date.objects.filter(user=self.request.user)
+    queryset = Date.objects.filter(user=self.request.user).order_by('-date').values()
     return queryset
 
 
