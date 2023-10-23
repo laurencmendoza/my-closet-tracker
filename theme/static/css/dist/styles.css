@@ -1230,6 +1230,18 @@ select {
   width: 280px;
 }
 
+.w-\[50vw\] {
+  width: 50vw;
+}
+
+.w-\[60vw\] {
+  width: 60vw;
+}
+
+.w-\[\] {
+  width: ;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1812,6 +1824,34 @@ select {
 
   .sm\:w-\[300px\] {
     width: 300px;
+  }
+
+  .sm\:w-\[325px\] {
+    width: 325px;
+  }
+
+  .sm\:w-\[3172px\] {
+    width: 3172px;
+  }
+
+  .sm\:w-\[172px\] {
+    width: 172px;
+  }
+
+  .sm\:w-\[120px\] {
+    width: 120px;
+  }
+
+  .sm\:w-\[3px\] {
+    width: 3px;
+  }
+
+  .sm\:w-\[200px\] {
+    width: 200px;
+  }
+
+  .sm\:w-\[100px\] {
+    width: 100px;
   }
 
   .sm\:max-w-\[200px\] {
