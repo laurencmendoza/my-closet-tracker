@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="max-w-screen-md mx-auto mt-20 border-brown border-[2px] rounded-md">
-  <h1 class="m-8 text-4xl text-darkbrown">Delete Clothing Item</h1>
-  <div class="w-[300px] m-8 rounded overflow-hidden border-[2px] border-brownwhite">
+<div class="max-w-screen-md mx-4 sm:mx-auto mt-20 border-brown border-[2px] rounded-md sm:w-[650px]">
+  <h1 class="m-4 sm:m-8 text-3xl sm:text-4xl text-darkbrown">Delete Clothing Item</h1>
+  <div class="w-[240px] sm:w-[300px] m-4 sm:m-8 rounded overflow-hidden border-[2px] border-brownwhite">
     <div class="bg-brownwhite">
     {% if clothingitem.photo_set.all %}
-      <img class="max-h-[300px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
+      <img class="sm:max-h-[300px] mx-auto bg-brownwhite" src="{{clothingitem.photo_set.first.url}}">
     {% else %}
     {% if clothingitem.category == 'S' %}
-    <img class="max-w-[300px]" src="https://i.imgur.com/3ATQc4h.png" alt="shoes">
+    <img class="sm:max-w-[300px]" src="https://i.imgur.com/3ATQc4h.png" alt="shoes">
     {% elif clothingitem.category == 'T' %}
-    <img class="max-w-[300px]" src="https://i.imgur.com/Vakh24u.png" alt="shirt">
+    <img class="sm:max-w-[300px]" src="https://i.imgur.com/Vakh24u.png" alt="shirt">
     {% elif clothingitem.category == 'B' %}
-    <img class="max-w-[300px]" src="https://i.imgur.com/rv14CLJ.png" alt="pants">
+    <img class="sm:max-w-[300px]" src="https://i.imgur.com/rv14CLJ.png" alt="pants">
     {% elif clothingitem.category == 'A' %}
-    <img class="max-w-[300px]" src="https://i.imgur.com/gJ2GYvw.png" alt="hat and sunglasses">
+    <img class="sm:max-w-[300px]" src="https://i.imgur.com/gJ2GYvw.png" alt="hat and sunglasses">
     {% elif clothingitem.category == 'F' %}
-    <img class="max-w-[300px]" src="https://i.imgur.com/dyVvDYS.png" alt="dress">
+    <img class="sm:max-w-[300px]" src="https://i.imgur.com/dyVvDYS.png" alt="dress">
     {% endif %}
     {% endif %}
   </div>
@@ -31,9 +31,9 @@
   <h4 class="mx-8 my-4 text-darkbrown text-2xl">Are you sure you want to delete?</h4>
   <form action="" method="POST" class="border-t-[2px] border-brown">
     {% csrf_token %}
-    <div class="flex justify-center gap-40">
+    <div class="flex justify-between sm:justify-center sm:gap-40">
     <input type="submit" value="Yes, Delete" class="bg-red m-4 hover:bg-darkred text-white w-[120px] h-[40px] rounded-md">
-    <a href="{% url 'clothing_items_detail' clothingitem.id %}" class="bg-brown text-center pt-2 mt-4 hover:bg-darkbrown text-white w-[120px] h-[40px] rounded-md">Cancel</a>
+    <a href="{% url 'clothing_items_detail' clothingitem.id %}" class="bg-brown text-center pt-2 m-4 hover:bg-darkbrown text-white w-[120px] h-[40px] rounded-md">Cancel</a>
     </div>
   </form>
 </div>

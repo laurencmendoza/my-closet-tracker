@@ -1739,6 +1739,10 @@ select {
 }
 
 @media (min-width: 640px) {
+  .sm\:m-8 {
+    margin: 2rem;
+  }
+
   .sm\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
@@ -1747,6 +1751,16 @@ select {
   .sm\:my-2 {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .sm\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sm\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   .sm\:mb-0 {
@@ -1781,8 +1795,20 @@ select {
     height: auto;
   }
 
+  .sm\:h-\[220px\] {
+    height: 220px;
+  }
+
   .sm\:max-h-\[280px\] {
     max-height: 280px;
+  }
+
+  .sm\:max-h-\[220px\] {
+    max-height: 220px;
+  }
+
+  .sm\:max-h-\[300px\] {
+    max-height: 300px;
   }
 
   .sm\:min-h-\[280px\] {
@@ -1854,8 +1880,16 @@ select {
     width: 100px;
   }
 
+  .sm\:w-\[500px\] {
+    width: 500px;
+  }
+
   .sm\:max-w-\[200px\] {
     max-width: 200px;
+  }
+
+  .sm\:max-w-\[300px\] {
+    max-width: 300px;
   }
 
   .sm\:grid-cols-2 {
@@ -1864,6 +1898,18 @@ select {
 
   .sm\:flex-col {
     flex-direction: column;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
+  .sm\:gap-20 {
+    gap: 5rem;
+  }
+
+  .sm\:gap-40 {
+    gap: 10rem;
   }
 
   .sm\:border-r-\[0px\] {
@@ -1887,6 +1933,11 @@ select {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 

@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="max-w-screen-md mx-auto mt-20 border-brown border-[2px] rounded-md">
-    <h1 class="m-8 text-4xl text-darkbrown">Delete Entry</h1>
-    <div class="border-[2px] border-brownwhite text-brown w-[500px] mx-auto mb-8">
+<div class="max-w-screen-md mx-4 sm:mx-auto mt-20 border-brown border-[2px] rounded-md sm:w-[650px]">
+    <h1 class="m-4 sm:m-8 text-3xl sm:text-4xl text-darkbrown">Delete Entry</h1>
+    <div class="border-[2px] border-brownwhite text-brown sm:w-[500px] mx-4 sm:mx-8 mb-8">
         <p class="text-lg font-bold p-4">{{date.date}}</p>
         <p class="p-4">{{date.description}}</p>
     </div>
-    <h4 class="mx-8 my-4 text-darkbrown text-2xl">Are you sure you want to delete?</h4>
+    <h4 class="m-4 sm:mx-8 text-darkbrown text-2xl">Are you sure you want to delete?</h4>
     <form action="" method="POST" class="border-t-[2px] border-brown">
       {% csrf_token %}
-      <div class="flex justify-center gap-40">
+      <div class="flex justify-between sm:justify-center sm:gap-40">
       <input type="submit" value="Yes, Delete" class="bg-red m-4 hover:bg-darkred text-white w-[120px] h-[40px] rounded-md">
-      <a href="{% url 'outfit_tracker' %}" class="bg-brown text-center pt-2 mt-4 hover:bg-darkbrown text-white w-[120px] h-[40px] rounded-md">Cancel</a>
+      <a href="{% url 'outfit_tracker' %}" class="bg-brown text-center pt-2 m-4 hover:bg-darkbrown text-white w-[120px] h-[40px] rounded-md">Cancel</a>
       </div>
     </form>
   </div>
