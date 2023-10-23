@@ -2,8 +2,8 @@
 {% block content %}
 
 <div class="flex flex-col my-14 mx-auto max-w-max flex justify-center border-[2px] border-brownwhite">
-    <div class="flex justify-center">
-        <div class="border-brownwhite border-r-[1px] flex flex-col">
+    <div class="md:flex justify-center">
+        <div class="border-brownwhite sm:border-r-[1px] flex flex-col">
             {% for photo in outfit.outfitphoto_set.all %}
             <img class="max-w-[300px] max-h-[400px] m-6" src="{{photo.url}}">
             {% empty %}
@@ -16,7 +16,7 @@
                 <button type="submit" class="text-center py-2 my-4 mx-auto bg-blue hover:bg-darkblue text-white rounded-md w-[160px]">Upload Photo</button>
             </form>
         </div>
-        <div class="flex flex-col gap-3 p-6 border-brownwhite border-l-[1px] rounded-r-md w-[700px] text-darkbrown">
+        <div class="flex flex-col gap-3 p-6 border-brownwhite sm:border-l-[1px] rounded-r-md w-[700px] text-darkbrown">
             <h1 class="text-2xl font-semibold mb-2">{{ outfit.description }}</h1>
             <!-- <p class="text-xl text-brown">Dates worn:</p>
             <p class="text-brown">
@@ -25,7 +25,7 @@
                 {% endfor %}
             </p> -->
             <p class="text-xl text-brown">Clothing Items:</p>
-            <div class="grid grid-cols-3">
+            <div class="grid sm:grid-cols-3">
             {% for clothingitem in outfit.clothing_items.all %}
             <div class="border-[2px] border-brownwhite w-[205px] mb-3">
                 {% if clothingitem.photo_set.all %}
@@ -69,10 +69,10 @@
         </a>
     </div>
 </div>
-<div class="border-brownwhite border-[1px] w-[1000px] mx-auto mb-[54px]">
+<div class="border-brownwhite border-[1px] sm:w-[1000px] mx-auto mb-[54px]">
     <h1 class="text-xl text-darkbrown p-4 bg-brownwhite">Add Clothing Items:</h1>
     {% if clothingitems.count %}
-    <div class="mx-4 px-4 grid grid-cols-4">
+    <div class="mx-4 px-4 grid sm:grid-cols-4">
         {% for clothingitem in clothingitems.all%}
         <div class="border-[2px] border-brownwhite w-[205px] m-4">
             {% if clothingitem.photo_set.all %}
