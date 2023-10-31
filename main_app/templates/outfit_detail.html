@@ -25,7 +25,7 @@
                 {% endfor %}
             </p> -->
             <p class="text-xl text-brown">Clothing Items:</p>
-            <div class="grid sm:grid-cols-3">
+            <div class="grid md:grid-cols-3">
             {% for clothingitem in outfit.clothing_items.all %}
             <div class="border-[2px] border-brownwhite w-[205px] mb-3">
                 {% if clothingitem.photo_set.all %}
